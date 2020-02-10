@@ -1,0 +1,9 @@
+configKey;envCategory;envType;url;grant_type;appid;secret;salt;channelId
+
+configVal;appMw;prd;https://www.wanandroid.com/
+configVal;appMw;pre;https://www.wanandroid.com/
+configVal;appMw;sit;https://www.wanandroid.com/
+
+configVal;h5;prd;https://mh5.bl.com/
+configVal;h5;pre;http://mh5.ut.bl.com/
+configVal;h5;sit;https://mh5.st.bl.com/

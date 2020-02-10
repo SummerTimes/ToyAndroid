@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutDisabledMessage="@string/shortcuts_publish_weibo_long_disable_msg"
+        android:shortcutId="one"
+        android:shortcutLongLabel="@string/shortcuts_publish_weibo_long_name"
+        android:shortcutShortLabel="@string/shortcuts_publish_weibo_short_name">
+
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.kk.app.mobile.MainActivity"
+            android:targetPackage="com.kk.app.mobile" />
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.kk.app.lore.activity.RecommendActivity"
+            android:targetPackage="com.kk.app.mobile" />
+    </shortcut>
+
+    <shortcut
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutDisabledMessage="@string/shortcuts_popular_weibo_disable_msg"
+        android:shortcutId="two"
+        android:shortcutLongLabel="@string/shortcuts_popular_weibo_long_name"
+        android:shortcutShortLabel="@string/shortcuts_popular_weibo_short_name">
+
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.kk.app.mobile.MainActivity"
+            android:targetPackage="com.kk.app.mobile" />
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.kk.app.mine.activity.MineActivity"
+            android:targetPackage="com.kk.app.mobile" />
+    </shortcut>
+
+    <shortcut
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutDisabledMessage="@string/shortcuts_qrcord_disable_msg"
+        android:shortcutId="three"
+        android:shortcutLongLabel="@string/shortcuts_qrcord_short_name"
+        android:shortcutShortLabel="@string/shortcuts_qrcord_long_name">
+
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.kk.app.mobile.MainActivity"
+            android:targetPackage="com.kk.app.mobile" />
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.kk.app.product.activity.ProductMainActivity"
+            android:targetPackage="com.kk.app.mobile" />
+    </shortcut>
+
+</shortcuts>

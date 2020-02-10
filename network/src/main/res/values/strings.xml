@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">netWork</string>
+    <string name="network_unconnected">网络未连接</string>
+    <string name="network_connect_failed">连接服务器失败</string>
+</resources>

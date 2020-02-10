@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/ll_page"
+        android:background="@color/app_F2F2F2" />
+
+    <LinearLayout
+        android:id="@+id/ll_page"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/ll_lore"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/im_lore"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@mipmap/app_lore"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_lore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="博客"
+                android:textColor="@color/app_999999"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_product"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/im_product"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@mipmap/app_product"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="体系"
+                android:textColor="@color/app_999999"
+                android:textSize="14sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/im_mine"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="3dp"
+                android:src="@mipmap/app_mine"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="@color/app_999999"
+                android:textSize="14sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

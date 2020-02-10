@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"    
+    android:orientation="vertical"
+    >
+    <TextView android:id="@+id/comment_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bl_web_imagebutton"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:minHeight="42dp"
+        android:minWidth="60dp"
+        android:gravity="center"
+        />
+    <ImageView
+        android:layout_width="12dp"
+        android:layout_height="8dp"
+        android:src="@mipmap/bl_web_na_bg_1"
+        android:scaleType="centerInside"
+        android:layout_alignEnd="@id/comment_tv_name"
+        android:layout_marginEnd="10dp"
+        />
+</RelativeLayout>

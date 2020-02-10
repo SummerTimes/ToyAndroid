@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/title_content_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/title_height"
+    android:background="@color/color_light_gray">
+
+    <ImageButton
+        android:id="@+id/title_btn_left"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@mipmap/common_i_back" />
+
+
+    <ImageButton
+        android:id="@+id/title_btn_right"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="#000000ff"
+        android:scaleType="center"
+        android:src="@mipmap/common_i_more" />
+
+
+    <TextView
+        android:id="@+id/title_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_toEndOf="@id/title_btn_left"
+        android:layout_toStartOf="@id/title_btn_right"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="#343434"
+        android:textSize="@dimen/title_font_size" />
+
+    <LinearLayout
+        android:id="@+id/two_lines_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/two_lines_main"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:textColor="@color/commodity_color_d"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/two_lines_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:textColor="@color/commodity_color_d"
+            android:textSize="11sp"
+            tools:ignore="SmallSp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/title_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@id/title_btn_left"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+
+    <ImageButton
+        android:id="@+id/share_in_title"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/title_btn_right"
+        android:background="@null"
+        android:scaleType="center"
+        android:src="@mipmap/share_img"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+
+</RelativeLayout>
+
+

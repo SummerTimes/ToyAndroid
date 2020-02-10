@@ -1,0 +1,87 @@
+allprojects {
+    repositories {
+        maven { url 'http://repo.jfrog.org/artifactory/gradle-plugins' }
+        maven{ url "${artifactory_contextUrl}/${artifactory_snapshot_repoKey}" }
+        maven{ url "${artifactory_contextUrl}/${artifactory_release_repoKey}" }
+    }
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+}
+
+apply plugin: 'maven'
+
+//task androidJavadocs(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
+//
+//task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+//    classifier = 'javadoc'
+//    from androidJavadocs.destinationDir
+//}
+
+def isLibrary = project.pluginManager.hasPlugin('com.android.library')
+def isJava = project.pluginManager.hasPlugin('java')
+def isGroovy = project.pluginManager.hasPlugin('groovy')
+
+if (isJava) {
+    apply plugin: 'java'
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from project.file('src/main/java')
+    }
+    artifacts {
+        archives sourcesJar
+    }
+} else if (isGroovy) {
+    apply plugin: 'groovy'
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from project.file('src/main/groovy')
+    }
+    artifacts {
+        archives sourcesJar
+    }
+} else if (isLibrary) {
+    task androidSourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.srcDirs
+    }
+    artifacts {
+        archives androidSourcesJar
+    }
+}
+
+
+def Properties props = new Properties()
+File propFile = project.rootProject.file('artifactory_version.properties')
+props.load(new FileInputStream(propFile))
+def local_mode = props.getProperty("maven_deploy_local") == 'true';
+def snapshot = props.getProperty("maven_type") == 'snapshot'
+def libVersion = props.getProperty(project.name) + (snapshot ? '-SNAPSHOT' : '')
+def path = artifactory_contextUrl + "/" + (snapshot ? artifactory_snapshot_repoKey : artifactory_release_repoKey)
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //deploy到maven仓库
+            if (local_mode) {
+                repository(url: uri(rootProject.file('repo-local'))) //deploy到本地仓库
+            } else {//deploy到maven私服中
+                repository(url: path) {
+                    authentication(userName: "${artifactory_user}", password: "${artifactory_password}")
+                }
+            }
+            pom.project {
+                name project.name
+                version libVersion
+                artifactId project.name
+                groupId maven_groupId
+                packaging isLibrary ? 'aar' : 'jar'
+                description 'libs for Android'
+            }
+        }
+    }
+}
+
+

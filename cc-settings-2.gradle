@@ -1,0 +1,43 @@
+project.apply plugin: 'cc-register'
+project.dependencies.add('api', "com.billy.android:cc:2.1.5")
+
+repositories {
+    maven { url rootProject.file("repo-local") }
+    maven { url "${artifactory_contextUrl}/${artifactory_snapshot_repoKey}" }
+    maven { url "${artifactory_contextUrl}/${artifactory_release_repoKey}" }
+    maven { url 'http://localhost:8081/nexus/content/groups/android_public/' }
+    google()
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    if (project.ext.has('runAsApp') && project.ext.runAsApp) {
+    }
+}
+
+//也可以按照上述格式继续添加你自己的自动注册需求，俗称：搭顺风车
+ccregister.registerInfo.add(
+        [
+                'scanInterface'          : 'com.kk.app.lib.rv.IFloorHolderFactory'
+                , 'scanSuperClasses'     : ['com.kk.app.lib.rv.BaseFloorHolderFactory']
+                , 'codeInsertToClassName': 'com.kk.app.lib.rv.FloorViewHolderMaker'
+                , 'registerMethodName'   : 'registerFloorFactory'
+        ]
+)
+ccregister.registerInfo.add(
+        [
+                'scanInterface'          : 'com.kk.app.web.function.register.IFunctionRegisterManager'
+                , 'codeInsertToClassName': 'com.kk.app.web.FunctionRegister'
+                , 'registerMethodName'   : 'autoRegisterFunction'
+        ]
+)
+ccregister.registerInfo.add(
+        [
+                'scanInterface'          : 'com.kk.app.lib.widget.component.IComponentInit'
+                , 'codeInsertToClassName': 'com.kk.app.lib.widget.component.ComponentManager'
+                , 'registerMethodName'   : 'register'
+        ]
+)
+
+
