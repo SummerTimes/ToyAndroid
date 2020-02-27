@@ -1,12 +1,11 @@
 package com.kk.app.lib.interceptor.cache;
 
-
 import android.util.LruCache;
 
 /**
- * 内存缓存
- *
- * @author mlp00
+ * @author kk
+ * @datetime: 2019/3/10
+ * @desc:内存缓存
  */
 public class MemoryCache implements ICache {
     /**

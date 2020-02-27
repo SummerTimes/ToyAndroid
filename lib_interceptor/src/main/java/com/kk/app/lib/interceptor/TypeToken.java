@@ -3,9 +3,9 @@ package com.kk.app.lib.interceptor;
 import java.lang.reflect.Type;
 
 /**
- * 用于gson获取泛型的类型
  * @author billy.qi
- * @since 17/9/14 12:50
+ * @datetime: 2017/09/14
+ * @desc:、用于gson获取泛型的类型
  */
 public class TypeToken {
 

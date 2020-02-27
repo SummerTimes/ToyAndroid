@@ -2,10 +2,14 @@ package com.kk.app.mobile
 
 import android.app.Application
 import android.util.Log
-import androidx.multidex.MultiDex
+import com.didichuxing.doraemonkit.DoraemonKit
+import com.didichuxing.doraemonkit.kit.IKit
 import com.kk.app.lib.network.NetworkConfig
 import com.kk.app.lib.widget.component.ComponentManager
 import com.kk.app.lib.widget.component.IComponentInit
+import com.kk.app.mobile.kit.EnvSwitchKit
+import java.util.*
+
 
 /**
  * @author kk
@@ -13,11 +17,15 @@ import com.kk.app.lib.widget.component.IComponentInit
  * @desc 程序入口
  */
 class MemberApplication : Application() {
+
     override fun onCreate() {
         super.onCreate()
-        MultiDex.install(this)
         NetworkConfig.setup(this, "prd")
         initComponent(this);
+
+        val kits: MutableList<IKit> = ArrayList()
+        kits.add(EnvSwitchKit())
+        DoraemonKit.install(this, kits)
     }
 
     /**

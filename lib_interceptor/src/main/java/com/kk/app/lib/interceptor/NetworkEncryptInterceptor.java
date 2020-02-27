@@ -18,13 +18,10 @@ import org.json.JSONObject;
 import java.net.URLEncoder;
 import java.util.Iterator;
 
-
 /**
- * 网络请求组件的加解密拦截器
- * 默认使用form表单方式发送请求
- *
  * @author billy.qi
- * @since 17/8/4 11:47
+ * @datetime: 2017/08/04
+ * @desc:网络请求组件的加解密拦截器/默认使用form表单方式发送请求
  */
 public class NetworkEncryptInterceptor implements ICCInterceptor {
     /**
@@ -176,7 +173,7 @@ public class NetworkEncryptInterceptor implements ICCInterceptor {
         JSONObject params = new JSONObject(cc.getParams());
         JSONObject data = ccResult.getData();
         String url = getUrl(cc);
-       Log.e(TAG,"response: url=" + url + "\ndata=" + data);
+        Log.e(TAG, "response: url=" + url + "\ndata=" + data);
         if (ccResult.isSuccess()) {
             if (data != null) {
                 String content = data.optString(KEY_RESULT);
@@ -199,7 +196,7 @@ public class NetworkEncryptInterceptor implements ICCInterceptor {
                 //obj里的内容有可能是jsonObject也可能是jsonArray或其它
                 if (!TextUtils.isEmpty(obj)) {
                     String jsonStr = DES.decryptDES(obj, key);
-                   Log.e(TAG,"response data str=" + jsonStr);
+                    Log.e(TAG, "response data str=" + jsonStr);
                     ccResult.addData(KEY_RESULT, jsonStr);
 
                     if (cacheOption != null) {

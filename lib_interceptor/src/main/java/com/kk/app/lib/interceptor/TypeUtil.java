@@ -8,7 +8,8 @@ import java.lang.reflect.Type;
 
 /**
  * @author billy.qi
- * @since 16/1/6 19:09
+ * @datetime: 2016/01/06
+ * @desc:
  */
 class TypeUtil {
 

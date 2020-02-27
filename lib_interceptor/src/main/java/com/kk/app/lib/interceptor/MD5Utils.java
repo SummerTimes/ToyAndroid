@@ -8,12 +8,10 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-
 /**
- * 采用MD5加密解密
- *
  * @author tfq
- * @datetime 2011-10-13
+ * @datetime: 2011/10/13
+ * @desc:Name 采用MD5加密解密
  */
 public class MD5Utils {
     private static final String TAG = "MD5Utils";

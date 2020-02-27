@@ -14,9 +14,9 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
- * @Class Name DES
- * @Author songwei
- * @Create In 2015年1月5日
+ * @author songwei
+ * @datetime: 2015/1/5
+ * @desc:Name DES
  */
 public class DES {
 

@@ -33,24 +33,21 @@ dependencies {
     implementation rootProject.ext.deps.kotlin_stdlib_jdk7
     implementation rootProject.ext.deps.appcompatv7
 
-    implementation project(':mine')
-    implementation project(':login')
-    implementation project(':lore')
-    implementation project(':product')
+    implementation rootProject.ext.deps.mine
+    implementation rootProject.ext.deps.login
+//    implementation project(':login')
+    implementation rootProject.ext.deps.product
+    implementation rootProject.ext.deps.lore
 
-//    implementation "com.kk.app:mine:${mine}"
-//    implementation "com.kk.app:login:${login}"
-//    implementation "com.kk.app:product:${product}"
-//    implementation "com.kk.app:lore:${lore}"
-
-    implementation "com.kk.app:webview:${webview}"
-    implementation "com.kk.app:lib_util:${lib_util}"
-    implementation "com.kk.app:lib_image:${lib_image}"
-    implementation "com.kk.app:lib_banner:${lib_banner}"
-    implementation "com.kk.app:lib_widget:${lib_widget}"
-    implementation "com.kk.app:lib_network:${lib_network}"
+    implementation rootProject.ext.deps.webview
+    implementation rootProject.ext.deps.lib_util
+    implementation rootProject.ext.deps.lib_image
+    implementation rootProject.ext.deps.lib_banner
+    implementation rootProject.ext.deps.lib_widget
+    implementation rootProject.ext.deps.lib_network
     implementation 'com.android.support:multidex:1.0.3'
     implementation "org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.3.61."
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:2.2.2'
 }
 
 

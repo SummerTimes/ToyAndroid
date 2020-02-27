@@ -12,4 +12,15 @@
             android:onClick="onCheckNet"
             android:text="获取网络信息"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:onClick="onGetData"
+        android:text="获取信息"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="获取get信息"/>
+
 </LinearLayout>

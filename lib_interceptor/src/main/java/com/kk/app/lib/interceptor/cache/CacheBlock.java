@@ -3,9 +3,9 @@ package com.kk.app.lib.interceptor.cache;
 import java.io.Serializable;
 
 /**
- * 缓存块
- *
- * @author mlp00
+ * @author kk
+ * @datetime: 2019/3/10
+ * @desc:缓存块
  */
 public class CacheBlock implements Serializable {
 

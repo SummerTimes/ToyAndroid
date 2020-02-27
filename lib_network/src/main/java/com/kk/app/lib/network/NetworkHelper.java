@@ -13,6 +13,7 @@ import com.billy.cc.core.component.CCResult;
 import com.billy.cc.core.component.IComponentCallback;
 import com.google.gson.Gson;
 import com.kk.app.lib.interceptor.DES;
+import com.kk.app.lib.interceptor.NetworkCookieInterceptor;
 import com.kk.app.lib.interceptor.NetworkEncryptInterceptor;
 import com.kk.app.lib.interceptor.NetworkGsonInterceptor;
 import com.kk.app.lib.interceptor.cache.CacheOption;
@@ -765,16 +766,16 @@ public class NetworkHelper {
      * @param callback 返回
      * @param <T>      数据类型
      */
-    public static <T> String queryApi(String url, JSONObject data, NetworkCallback<T> callback) {
+    public static <T> String queryApi(String url, JSONObject data,String header, NetworkCallback<T> callback) {
         CC cc = CC.obtainBuilder("network")
                 .setActionName(HTTP_POST)
                 .addParam("retry", RETRY_NUM)
                 .addParam("url", url)
-                .addParam("headers", getPhoneIdHeader(null))
+                .addParam("headers", header)
                 .addParam("data", data)
                 .addInterceptor(new NetworkGsonInterceptor(callback))
+                .addInterceptor(NetworkCookieInterceptor.get())
                 .build();
-
         return cc.callAsyncCallbackOnMainThread(new NetworkComponentCallback<>(callback));
     }
 
@@ -787,16 +788,16 @@ public class NetworkHelper {
      * @param callback 返回
      * @param <T>      数据类型
      */
-    public static <T> String queryApi(String url, String data, String method, NetworkCallback<T> callback) {
+    public static <T> String queryApi(String url, String data, String header, String method, NetworkCallback<T> callback) {
         CC cc = CC.obtainBuilder("network")
                 .setActionName(method)
                 .addParam("retry", RETRY_NUM)
                 .addParam("url", url)
-                .addParam("headers", getHeader(null))
+                .addParam("headers", header)
                 .addParam("data", data)
                 .addInterceptor(new NetworkGsonInterceptor(callback))
+                .addInterceptor(NetworkCookieInterceptor.get())
                 .build();
-
         return cc.callAsyncCallbackOnMainThread(new NetworkComponentCallback<>(callback));
     }
 
@@ -805,10 +806,12 @@ public class NetworkHelper {
             header = new JSONObject();
         }
         try {
-            header.put("Connection", "Keep-Alive");
-            header.put("Host", "www.wanandroid.com");
-            header.put("Accept-Encoding", "gzip, deflate");
-            header.put("Cookie", "gzip, deflate");
+//            header.put("Connection", "Keep-Alive");
+//            header.put("Host", "www.wanandroid.com");
+//            header.put("Accept-Encoding", "gzip, deflate");
+//            header.put("Cookie", "gzip, deflate");
+//            header.put("Content-Type", "application/x-www-form-urlencoded");
+//            header.put("Cookie", "");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

@@ -8,9 +8,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * 磁盘缓存
- *
- * @author mlp00
+ * @author kk
+ * @datetime: 2019/3/10
+ * @desc:磁盘缓存
  */
 public class DiskCache implements ICache {
     private DiskLruCache mDiskLruCache;

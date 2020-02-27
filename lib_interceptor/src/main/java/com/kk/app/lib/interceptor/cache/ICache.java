@@ -1,9 +1,9 @@
 package com.kk.app.lib.interceptor.cache;
 
 /**
- * 缓存接口
- *
- * @author mlp00
+ * @author kk
+ * @datetime: 2019/3/10
+ * @desc:缓存接口
  */
 public interface ICache {
 

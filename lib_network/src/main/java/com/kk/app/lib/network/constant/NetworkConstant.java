@@ -6,10 +6,6 @@ package com.kk.app.lib.network.constant;
  */
 
 public interface NetworkConstant {
-
-    String SERVICE_GET_TOKEN = "token";
-    String INVALID_TOKEN = "BL10012";
-    String EMPTY_TOKEN = "BL10015";
     String KEY_DATA_RESPONSE = "obj";
 
     String HTTP = "http://";

@@ -6,11 +6,10 @@ import java.io.File;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-
 /**
- * 缓存管理类
- *
- * @author mlp00
+ * @author kk
+ * @datetime: 2019/3/10
+ * @desc:缓存管理类
  */
 public class CacheManager {
 

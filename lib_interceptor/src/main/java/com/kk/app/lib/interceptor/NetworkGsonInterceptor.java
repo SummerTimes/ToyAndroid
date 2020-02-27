@@ -12,11 +12,9 @@ import org.json.JSONObject;
 import java.lang.reflect.Type;
 
 /**
- * 将组件调用CCResult的data转换成JavaBean
- * 使用gson进行转换
- *
  * @author billy.qi
- * @since 17/8/16 18:41
+ * @datetime: 2017/08/16
+ * @desc:将组件调用CCResult的data转换成JavaBean/使用gson进行转换
  */
 public class NetworkGsonInterceptor implements ICCInterceptor {
 

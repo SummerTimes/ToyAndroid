@@ -12,12 +12,10 @@ import org.json.JSONObject;
 
 import java.util.Iterator;
 
-
 /**
- * 网络请求组件的openApi拦截器
- *
  * @author billy.qi
- * @since 17/8/4 11:47
+ * @datetime: 2017/08/04
+ * @desc:网络请求组件的openApi拦截器
  */
 public class NetworkOpenApiInterceptor implements ICCInterceptor {
 

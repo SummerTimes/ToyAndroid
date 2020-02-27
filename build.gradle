@@ -10,7 +10,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0-alpha09'
+        classpath 'com.android.tools.build:gradle:4.0.0-beta01'
         classpath 'com.billy.android:cc-register:1.1.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
@@ -65,6 +65,27 @@ ext {
             rxjava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxandroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroid}"
     ]
+
+    propModule = new Properties()
+    fileModule = new File('artifactory_version.properties')
+    propModule.load(fileModule.newDataInputStream())
+    //maven依赖,artifactory_version存放名称,gradle存放版本号
+    propModule.each {
+        if (it.key != null && !it.key.startsWith("maven_")) {
+            if (rootProject.hasProperty(it.key)) {//gradle.properties是否有该属性
+                ver = rootProject.(it.key)
+                if (ver != null && !ver.isEmpty()) {//版本号为空不加入
+                    maven = new StringBuilder(maven_groupId).append(":")
+                            .append(it.key).append(":")
+                            .append(ver)
+                    deps.put(it.key, maven)
+                }
+            }
+        }
+    }
+    deps.each {
+        logger.quiet("----mavenList---"+it.key+"="+it.value)
+    }
 }
 
 task clean(type: Delete) {

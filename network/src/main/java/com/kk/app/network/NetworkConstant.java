@@ -48,7 +48,6 @@ public interface NetworkConstant {
     String PRIVATE_KEY_CONTENT_TYPE = "Content-type";
 
 
-
     /**
      * 失败重试次数
      */
@@ -85,6 +84,11 @@ public interface NetworkConstant {
      * result
      */
     String KEY_RESULT = "result";
+
+    /**
+     * response headers
+     */
+    String KEY_RESPONSE_HEADERS = "responseHeaders";
 
     /**
      * http Code

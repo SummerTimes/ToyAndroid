@@ -12,9 +12,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * @Class Name Base64
- * @Author songwei
- * @Create In 2015年1月5日
+ * @author songwei
+ * @datetime: 2015/1/5
+ * @desc:
  */
 public class Base64 {
 

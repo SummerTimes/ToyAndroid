@@ -6,13 +6,20 @@ import android.util.Log;
 import com.billy.cc.core.component.CC;
 import com.billy.cc.core.component.CCResult;
 import com.billy.cc.core.component.IComponent;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.FormBody;
+import okhttp3.Headers;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -26,6 +33,8 @@ import okhttp3.ResponseBody;
  * @desc 使用okHttp实现的网络请求组件:https://github.com/square/okhttp/wiki/Recipes
  */
 public class NetworkComponent implements IComponent {
+
+    private static final String TAG = "xp";
 
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
@@ -48,7 +57,7 @@ public class NetworkComponent implements IComponent {
             String action = cc.getActionName();
             JSONObject params = new JSONObject(cc.getParams());
             String url = params.optString(NetworkConstant.KEY_URL);
-            Log.e("xp", "-----params-----" + params);
+            Log.e(TAG, "-----params-----" + params);
             if (NetworkConstant.KRY_ACTION_GET.equalsIgnoreCase(action)) {
                 boolean networkConnected = NetworkUtil.isNetworkConnected(cc.getContext());
                 if (networkConnected) {
@@ -57,7 +66,7 @@ public class NetworkComponent implements IComponent {
                 } else {
                     result = CCResult.error(cc.getContext().getString(R.string.network_unconnected));
                 }
-                Log.e("xp", "-----GET---result--" + result);
+                Log.e(TAG, "-----GET---result--" + result);
             } else if (NetworkConstant.KRY_ACTION_POST.equalsIgnoreCase(action)) {
                 boolean networkConnected = NetworkUtil.isNetworkConnected(cc.getContext());
                 if (networkConnected) {
@@ -66,7 +75,7 @@ public class NetworkComponent implements IComponent {
                 } else {
                     result = CCResult.error(cc.getContext().getString(R.string.network_unconnected));
                 }
-                Log.e("xp", "-----POST---result--" + result);
+                Log.e(TAG, "-----POST---result--" + result);
             } else if (NetworkConstant.KRY_ACTION_SETTING.equalsIgnoreCase(action)) {
                 initOkHttpClient(params);
                 result = CCResult.success();
@@ -131,6 +140,7 @@ public class NetworkComponent implements IComponent {
                 url += data;
             }
         }
+        Log.e(TAG, "---get------url-----:" + url);
         Request.Builder builder = new Request.Builder().url(url).get();
         addHeaders(builder, params);
         Request request = builder.build();
@@ -241,7 +251,14 @@ public class NetworkComponent implements IComponent {
         } else {
             content = data.toString();
         }
-        return RequestBody.create(mediaType, content);
+        FormBody.Builder body = new FormBody.Builder();
+        Map<String, String> retMap = new Gson().fromJson(content, new TypeToken<Map<String, String>>() {
+        }.getType());
+        for (String key : retMap.keySet()) {
+            body.add(key, retMap.get(key));
+        }
+        return body.build();
+//        return RequestBody.create(mediaType, content);
     }
 
 
@@ -249,22 +266,33 @@ public class NetworkComponent implements IComponent {
      * 给网络请求添加head
      */
     private void addHeaders(Request.Builder builder, JSONObject params) {
-        JSONObject heads = params.optJSONObject(NetworkConstant.KEY_HEADER);
-        if (heads != null) {
-            Iterator<String> keys = heads.keys();
-            String key, value;
-            while (keys.hasNext()) {
-                key = keys.next();
-                value = heads.optString(key);
-                builder.addHeader(key, value);
-                if (NetworkConstant.PRIVATE_KEY_CONTENT_TYPE.equalsIgnoreCase(key)) {
-                    try {
-                        params.put(NetworkConstant.PRIVATE_KEY_CONTENT_TYPE, value);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+        try {
+            String headers = params.optString(NetworkConstant.KEY_HEADER);
+            if (!TextUtils.isEmpty(headers)) {
+                JSONObject heads = new JSONObject(headers);
+                Iterator<String> keys = heads.keys();
+                String key, value;
+                while (keys.hasNext()) {
+                    key = keys.next();
+                    value = heads.optString(key);
+                    Log.e("xp", "------key-----–" + key);
+                    Log.e("xp", "------value-----–" + value);
+                    if (key.contains("Cookie")) {
+                        builder.addHeader("Cookie", value);
+                    } else {
+                        builder.addHeader(key, value);
+                    }
+                    if (NetworkConstant.PRIVATE_KEY_CONTENT_TYPE.equalsIgnoreCase(key)) {
+                        try {
+                            params.put(NetworkConstant.PRIVATE_KEY_CONTENT_TYPE, value);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -281,7 +309,13 @@ public class NetworkComponent implements IComponent {
             if (responseBody != null) {
                 try {
                     String content = responseBody.string();
-                    return CCResult.success(NetworkConstant.KEY_RESULT, content);
+                    Map<String, Object> result = new HashMap<>();
+                    result.put(NetworkConstant.KEY_RESULT, content);
+                    if (!response.headers("Set-Cookie").isEmpty()) {
+                        List<String> cookies = response.headers("Set-Cookie");
+                        result.put(NetworkConstant.KEY_RESPONSE_HEADERS, cookies);
+                    }
+                    return CCResult.success(result);
                 } catch (Exception e) {
                     e.printStackTrace();
                     return CCResult.error(NetworkConstant.KEY_HTTP_CODE, code);

@@ -22,4 +22,9 @@ public interface LoginConstant {
      */
     String KRY_LOGIN_ACTIVITY_ACTION = "LoginActivity";
 
+
+    String KRY_LOGIN = "https://www.wanandroid.com/user/login";
+
+    String KRY_WXARTICLE = "https://wanandroid.com/wxarticle/chapters/json";
+
 }

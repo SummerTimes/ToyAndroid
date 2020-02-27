@@ -12,10 +12,14 @@ import com.kk.app.lib.network.NetworkCallback;
 import com.kk.app.lib.network.NetworkHelper;
 import com.kk.app.lib.widget.utils.LxStatusBarUtil;
 import com.kk.app.login.R;
+import com.kk.app.login.constant.LoginConstant;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
+
+import okhttp3.Headers;
 
 /**
  * @author kk
@@ -46,31 +50,81 @@ public class LoginActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void onCheckNet(View view) {
-        String Url = "https://www.wanandroid.com/user/login";
+    public void onGetData(View view) {
+        String url = LoginConstant.KRY_WXARTICLE;
         try {
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("username", "naivetimes");
-            jsonObject.put("password", "123456");
-            NetworkHelper.queryApi(Url, jsonObject.toString(), NetworkHelper.HTTP_POST, new NetworkCallback<String>() {
+            NetworkHelper.queryApi(url, "",getHeader(null) , NetworkHelper.HTTP_GET, new NetworkCallback<String>() {
                 @Override
-                public void onSuccess(@NonNull CCResult rawResult, String str) {
-                    Log.e("xp", "---onSuccess----" + str);
+                public void onSuccess(@NonNull CCResult rawResult, String convertedResult) {
+                    Log.e("xp", "---onGetData----------onSuccess-----" + convertedResult);
                 }
 
                 @Override
                 public void onFailed(@NonNull CCResult result) {
-                    Log.e("xp", "---onFailed----" + result.getData());
+                    Log.e("xp", "---onGetData----------onFailed-----" + result.getData());
                 }
 
                 @Override
                 public void onFinally(@NonNull CCResult result) {
-
+                    Log.e("xp", "---onGetData----------onFinally--" + result.getData());
                 }
             });
-        } catch (JSONException e) {
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 测试获取网络信息数据接口
+     *
+     * @param view
+     */
+    public void onCheckNet(View view) {
+        onRequestLogin();
+    }
+
+    /**
+     * 测试登录接口
+     */
+    public void onRequestLogin() {
+        String url = LoginConstant.KRY_LOGIN;
+        try {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("username", "naivetimes");
+            jsonObject.put("password", "123456");
+            NetworkHelper.queryApi(url, jsonObject.toString(), getHeader(null), NetworkHelper.HTTP_POST, new NetworkCallback<String>() {
+                @Override
+                public void onSuccess(@NonNull CCResult rawResult, String convertedResult) {
+                    Log.e("xp", "---onSuccess----" + convertedResult);
+                }
+
+                @Override
+                public void onFailed(@NonNull CCResult result) {
+                    Log.e("xp", "---onSuccess----" + result.getData());
+                }
+
+                @Override
+                public void onFinally(@NonNull CCResult result) {
+                    Log.e("xp", "---onSuccess----" + result.getData());
+                }
+            });
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+
+
+    private static String getHeader(JSONObject header) {
+        if (header == null) {
+            header = new JSONObject();
+        }
+        try {
+            header.put("Content-Type", "application/x-www-form-urlencoded");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return header.toString();
     }
 }
