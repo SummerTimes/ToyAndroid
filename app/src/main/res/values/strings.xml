@@ -19,6 +19,6 @@
     <string name="shortcuts_qrcord_short_name">扫一扫</string>
     <string name="shortcuts_qrcord_long_name">扫一扫</string>
     <string name="shortcuts_qrcord_disable_msg">扫一扫不可用</string>
-    <string name="app_ambient">环境切换</string>
+    <string name="app_ambient">环境</string>
 
 </resources>

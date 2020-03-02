@@ -11,6 +11,34 @@ repositories {
     mavenCentral()
 }
 
+android {
+    compileSdkVersion rootProject.compileVersion
+
+    buildTypes {
+        def networkEnvType = networkEnvType as String
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release//设置签名信息
+            buildConfigField("String", "networkEnvType", "\"" + networkEnvType + "\"")
+        }
+        debug {
+            minifyEnabled false
+            zipAlignEnabled true//字节对齐，运行效果更好
+            shrinkResources false//去除无用资源
+//            signingConfig signingConfigs.release//设置签名信息
+            buildConfigField("String", "networkEnvType", "\"" + networkEnvType + "\"")
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'lib/mips64/*.so'
+        exclude 'lib/mips/*.so'
+    }
+}
+
 dependencies {
     if (project.ext.has('runAsApp') && project.ext.runAsApp) {
     }

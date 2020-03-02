@@ -31,5 +31,15 @@ interface AppConstant {
          * 获取渠道号
          */
         const val KRY_DEVICE_ID = "getDeviceId"
+
+        /**
+         * 缓存名
+         */
+        const val APP_NET_WORK = "app_net_work"
+
+        /**
+         * 网络标签
+         */
+        const val NET_TYPE = "net_type"
     }
 }

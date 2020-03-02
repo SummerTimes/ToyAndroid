@@ -65,7 +65,6 @@ ext {
             rxjava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxandroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroid}"
     ]
-
     propModule = new Properties()
     fileModule = new File('artifactory_version.properties')
     propModule.load(fileModule.newDataInputStream())

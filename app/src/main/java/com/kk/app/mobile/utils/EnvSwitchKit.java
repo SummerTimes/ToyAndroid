@@ -1,13 +1,21 @@
-package com.kk.app.mobile.kit;
+package com.kk.app.mobile.utils;
 
 import android.content.Context;
+import android.content.Intent;
 
+import com.didichuxing.doraemonkit.constant.BundleKey;
+import com.didichuxing.doraemonkit.constant.FragmentIndex;
 import com.didichuxing.doraemonkit.kit.Category;
 import com.didichuxing.doraemonkit.kit.IKit;
+import com.didichuxing.doraemonkit.ui.TranslucentActivity;
 import com.kk.app.lib.widget.BLToast;
 import com.kk.app.mobile.R;
+import com.kk.app.mobile.activity.AppNetWorkActivity;
 
 public class EnvSwitchKit implements IKit {
+
+    private static final String TAG = "NetWorkType";
+
     @Override
     public int getCategory() {
         return Category.BIZ;
@@ -20,14 +28,14 @@ public class EnvSwitchKit implements IKit {
  
     @Override
     public int getIcon() {
-        return R.mipmap.icon_home_v3;
+        return R.drawable.app_net_work;
     }
  
     @Override
     public void onClick(Context context) {
-        BLToast.showToast(context,"你没");
-//        DebugService service = ServiceManager.getInstance().getService(context, DebugService.class);
-//        PageManager.getInstance().startFragment(service.getContainer(), EnvSwitchFragment.class);
+        Intent intent = new Intent(context, AppNetWorkActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
  
     @Override
