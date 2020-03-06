@@ -13,9 +13,9 @@ include ':app'
 //include ':lib_network'
 //include ':lib_interceptor'
 
-//include ':login'
-//include ':lore'
-//include ':mine'
-//include ':product'
+include ':login'
+include ':lore'
+include ':mine'
+include ':product'
 
 

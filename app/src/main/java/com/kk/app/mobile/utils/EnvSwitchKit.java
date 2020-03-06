@@ -3,12 +3,8 @@ package com.kk.app.mobile.utils;
 import android.content.Context;
 import android.content.Intent;
 
-import com.didichuxing.doraemonkit.constant.BundleKey;
-import com.didichuxing.doraemonkit.constant.FragmentIndex;
 import com.didichuxing.doraemonkit.kit.Category;
 import com.didichuxing.doraemonkit.kit.IKit;
-import com.didichuxing.doraemonkit.ui.TranslucentActivity;
-import com.kk.app.lib.widget.BLToast;
 import com.kk.app.mobile.R;
 import com.kk.app.mobile.activity.AppNetWorkActivity;
 
