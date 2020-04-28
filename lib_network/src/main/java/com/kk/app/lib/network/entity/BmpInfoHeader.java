@@ -1,9 +1,9 @@
 package com.kk.app.lib.network.entity;
 
 /**
- * @author yp2
- * @date 2015-11-17
- * @description Bmp文件信息头部
+ * @author kk
+ * @datetime: 2020/4/24
+ * @desc:Bmp文件信息头部
  */
 public class BmpInfoHeader {
 

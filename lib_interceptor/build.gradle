@@ -20,9 +20,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
     api rootProject.ext.deps.cc
-    implementation "com.kk.app:lib_util:$lib_util"
-    implementation "com.google.code.gson:gson:2.8.6"
-    implementation "com.jakewharton:disklrucache:2.0.2"
+    api rootProject.ext.deps.lib_util
+    api "com.google.code.gson:gson:2.8.6"
+    api "com.jakewharton:disklrucache:2.0.2"
 }

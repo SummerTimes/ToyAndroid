@@ -16,29 +16,21 @@ import java.util.Map;
 
 
 /**
- * description:网络请求配置
- * date: 2017/8/23 13:49
- *
- * @author mlp00
+ * @author kk
+ * @datetime: 2020/4/24
+ * @desc: 网络请求配置
  */
 public class NetworkConfig {
 
-    private static final String TAG = "NetworkConfig";
+    public static final String TAG = "NetworkConfig";
 
-    private static NetworkConfig sInstance;
-
-    private static Context mContext;
-    private static ArrayMap<String, String> openApiConfig;
-    private static ArrayMap<String, String> urlConfig;
-    private static Token token;
-    public static String deviceNum;
+    public static Context mContext;
+    public static NetworkConfig sInstance;
     public static String memberToken = "";
-    public static String phone = "";
-
-    private static String networkEnvType = "";
+    public static String networkEnvType = "";
+    public static ArrayMap<String, String> urlConfig;
 
     private NetworkConfig() {
-        openApiConfig = new ArrayMap<>();
         urlConfig = new ArrayMap<>();
     }
 
@@ -61,22 +53,7 @@ public class NetworkConfig {
         if (sInstance == null) {
             sInstance = new NetworkConfig();
         }
-        getDeviceNum(context);
         sInstance.loadCSV(context, type);
-        getToken();
-    }
-
-    /**
-     * 获取Device Num
-     *
-     * @param context
-     */
-    private static void getDeviceNum(Context context) {
-        deviceNum = SharedPreferenceUtil.getStringValueFromSP(context, NetworkSpKeys.NETWORK_SP_NAME, NetworkSpKeys.NETWORK_DEVICE_NUM);
-        if (TextUtils.isEmpty(deviceNum)) {
-            deviceNum = DeviceUtil.getDeviceId(context);
-            SharedPreferenceUtil.setStringDataIntoSP(context, NetworkSpKeys.NETWORK_SP_NAME, NetworkSpKeys.NETWORK_DEVICE_NUM, deviceNum);
-        }
     }
 
     /**
@@ -91,10 +68,10 @@ public class NetworkConfig {
             BufferedReader reader = new BufferedReader(isr);
             String line;
             while ((line = reader.readLine()) != null) {
-                String tokens[] = line.split(";", -1);
-                if ("configVal".compareToIgnoreCase(tokens[0]) == 0) {
-                    if (type.compareToIgnoreCase(tokens[2]) == 0 && tokens.length > 3) {
-                        urlConfig.put(tokens[1], tokens[3]);
+                String[] configs = line.split(";", -1);
+                if ("configVal".compareToIgnoreCase(configs[0]) == 0) {
+                    if (type.compareToIgnoreCase(configs[2]) == 0 && configs.length > 3) {
+                        urlConfig.put(configs[1], configs[3]);
                     }
                 }
             }
@@ -102,41 +79,6 @@ public class NetworkConfig {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    /**
-     * @return
-     */
-    public static Map<String, String> getOpenApiConfig() {
-        return openApiConfig;
-    }
-
-    /**
-     * 设置Token/并保存
-     *
-     * @param token
-     */
-    public static void setToken(Token token) {
-        NetworkConfig.token = token;
-        if (token != null) {
-            String strToken = new Gson().toJson(token);
-            SharedPreferenceUtil.setStringDataIntoSP(mContext, NetworkSpKeys.NETWORK_SP_NAME, NetworkSpKeys.NETWORK_TOKEN_INFO, strToken);
-        }
-    }
-
-    /**
-     * 获取Token
-     *
-     * @return
-     */
-    public static Token getToken() {
-        if (token == null) {
-            String strToken = SharedPreferenceUtil.getStringValueFromSP(mContext, NetworkSpKeys.NETWORK_SP_NAME, NetworkSpKeys.NETWORK_TOKEN_INFO, null);
-            if (!TextUtils.isEmpty(strToken)) {
-                token = new Gson().fromJson(strToken, Token.class);
-            }
-        }
-        return token;
     }
 
     /**

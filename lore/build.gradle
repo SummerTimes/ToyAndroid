@@ -34,10 +34,10 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation rootProject.ext.deps.kotlin_stdlib_jdk7
-    implementation "com.kk.app:lib_rv:${lib_rv}"
-    implementation "com.kk.app:lib_widget:${lib_widget}"
-    implementation "com.kk.app:lib_network:${lib_network}"
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api rootProject.ext.deps.lib_rv
+    api rootProject.ext.deps.lib_widget
+    api rootProject.ext.deps.lib_network
+    api rootProject.ext.deps.kotlin_stdlib_jdk7
 }
 

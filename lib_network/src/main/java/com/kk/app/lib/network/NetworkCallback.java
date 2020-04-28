@@ -6,11 +6,10 @@ import androidx.annotation.NonNull;
 import com.billy.cc.core.component.CCResult;
 import com.kk.app.lib.interceptor.TypeToken;
 
-
 /**
- * Gson方式的callback
- * @author billy.qi
- * @since 17/8/17 14:03
+ * @author kk
+ * @datetime: 2020/4/24
+ * @desc:Gson方式的callback
  */
 public abstract class NetworkCallback<T> extends TypeToken {
 

@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @author menglp
- * @since 2018/5/14 18:20
+ * @author kk
+ * @datetime: 2020/4/24
+ * @desc:
  */
-
 public class DeviceUtil {
 
     private static final List<String> M_INVALID_ANDROID_ID = new ArrayList<String>() {

@@ -52,10 +52,10 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "com.google.code.gson:gson:2.8.6"
-    implementation "com.kk.app:lib_web:$lib_web"
-    implementation "com.kk.app:lib_image:$lib_image"
-    implementation "com.kk.app:lib_widget:$lib_widget"
-    implementation rootProject.ext.deps.cardviewV7
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api "com.google.code.gson:gson:2.8.6"
+    api rootProject.ext.deps.lib_web
+    api rootProject.ext.deps.lib_image
+    api rootProject.ext.deps.lib_widget
+    api rootProject.ext.deps.cardview
 }

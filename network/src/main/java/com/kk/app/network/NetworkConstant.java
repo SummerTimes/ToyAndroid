@@ -86,11 +86,6 @@ public interface NetworkConstant {
     String KEY_RESULT = "result";
 
     /**
-     * response headers
-     */
-    String KEY_RESPONSE_HEADERS = "responseHeaders";
-
-    /**
      * http Code
      */
     String KEY_HTTP_CODE = "httpCode";

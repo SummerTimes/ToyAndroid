@@ -15,9 +15,9 @@ import java.io.OutputStream;
 
 
 /**
- * @author yp2
+ * @author kk
  * @date 2015-11-18
- * @description 将文件内容直接写到bmp文件的末尾
+ * @desc 将文件内容直接写到bmp文件的末尾
  */
 public class BmpUtilTry {
 

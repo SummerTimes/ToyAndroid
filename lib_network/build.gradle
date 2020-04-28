@@ -20,8 +20,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation rootProject.ext.deps.cc
-    implementation "com.kk.app:network:$network"
-    implementation "com.kk.app:lib_interceptor:$lib_interceptor"
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api rootProject.ext.deps.cc
+    api rootProject.ext.deps.network
+    api rootProject.ext.deps.lib_interceptor
 }

@@ -20,8 +20,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation rootProject.ext.deps.cc
-    implementation rootProject.ext.deps.supportV4
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api rootProject.ext.deps.cc
+    api rootProject.ext.deps.appcompat
 }
 

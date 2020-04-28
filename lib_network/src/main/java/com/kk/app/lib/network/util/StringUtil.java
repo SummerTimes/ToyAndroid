@@ -10,9 +10,9 @@ import java.util.regex.Pattern;
 
 
 /**
- * description:字符串操作工具类
- * author: mlp00
- * date: 2017/8/23 13:45
+ * @author kk
+ * @datetime: 2020/4/24
+ * @desc:字符串操作工具类
  */
 public class StringUtil {
 

@@ -10,11 +10,10 @@ import com.kk.app.lib.network.util.CryptoUtil;
 import java.io.IOException;
 import java.io.InputStream;
 
-
 /**
- * description:动态密钥管理
- * author: mlp00
- * date: 2017/8/23 16:40
+ * @author kk
+ * @datetime: 2020/4/24
+ * @desc:动态密钥管理
  */
 public class DynamicKeyManager {
 
@@ -24,7 +23,7 @@ public class DynamicKeyManager {
 
     public static void initDynamicKey(Context context) {
         try {
-            InputStream inputStream = context.getAssets().open("dynamic_sun.bmp");
+            InputStream inputStream = context.getAssets().open("XXX.bmp");
             dynamicKey = BmpUtilRefactoring.readStringFromInputStream(inputStream);
             Log.d(TAG, "dynamicKey:" + dynamicKey);
         } catch (IOException e) {

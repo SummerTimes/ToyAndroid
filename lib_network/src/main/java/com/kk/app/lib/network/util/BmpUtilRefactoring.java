@@ -1,4 +1,4 @@
-package com.kk.app.lib.network.util;
+ package com.kk.app.lib.network.util;
 
 import com.kk.app.lib.network.entity.Bmp;
 import com.kk.app.lib.network.entity.BmpHeader;
@@ -18,9 +18,9 @@ import java.io.OutputStream;
 
 
 /**
- * @author yp2
+ * @author kk
  * @date 2015-11-18
- * @description 重构后的Bmp工具
+ * @desc 重构后的Bmp工具
  * <br/>
  * 主要做了几件事： <br/>
  * 1.位图数据可以不存储，在需要写入的时候再去读原文件的位图数据部分<br/>

@@ -21,7 +21,7 @@ android {
 
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation rootProject.ext.deps.support_annotations
-    implementation 'com.tencent.sonic:sdk:3.0.0'
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'com.tencent.sonic:sdk:3.0.0'
+    api rootProject.ext.deps.annotation
 }

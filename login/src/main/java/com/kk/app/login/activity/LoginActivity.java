@@ -56,17 +56,17 @@ public class LoginActivity extends AppCompatActivity {
             NetworkHelper.queryApi(url, "",getHeader(null) , NetworkHelper.HTTP_GET, new NetworkCallback<String>() {
                 @Override
                 public void onSuccess(@NonNull CCResult rawResult, String convertedResult) {
-                    Log.e("xp", "---onGetData----------onSuccess-----" + convertedResult);
+                    Log.e("xp", "---GetData----------onSuccess-----" + convertedResult);
                 }
 
                 @Override
                 public void onFailed(@NonNull CCResult result) {
-                    Log.e("xp", "---onGetData----------onFailed-----" + result.getData());
+                    Log.e("xp", "---GetData----------onFailed-----" + result.getData());
                 }
 
                 @Override
                 public void onFinally(@NonNull CCResult result) {
-                    Log.e("xp", "---onGetData----------onFinally--" + result.getData());
+                    Log.e("xp", "---GetData----------onFinally--" + result.getData());
                 }
             });
         } catch (Exception e) {
@@ -95,17 +95,17 @@ public class LoginActivity extends AppCompatActivity {
             NetworkHelper.queryApi(url, jsonObject.toString(), getHeader(null), NetworkHelper.HTTP_POST, new NetworkCallback<String>() {
                 @Override
                 public void onSuccess(@NonNull CCResult rawResult, String convertedResult) {
-                    Log.e("xp", "---onSuccess----" + convertedResult);
+                    Log.e("xp", "-Login--onSuccess----" + convertedResult);
                 }
 
                 @Override
                 public void onFailed(@NonNull CCResult result) {
-                    Log.e("xp", "---onSuccess----" + result.getData());
+                    Log.e("xp", "-Login--onFailed----" + result.getData());
                 }
 
                 @Override
                 public void onFinally(@NonNull CCResult result) {
-                    Log.e("xp", "---onSuccess----" + result.getData());
+                    Log.e("xp", "-Login--onFinally----" + result.getData());
                 }
             });
 

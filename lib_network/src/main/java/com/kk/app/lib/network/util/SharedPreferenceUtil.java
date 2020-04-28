@@ -3,11 +3,11 @@ package com.kk.app.lib.network.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+
 /**
- * description:缓存工具类
- * date: 2017/8/23 13:43
- *
- * @author mlp00
+ * @author kk
+ * @datetime: 2020/4/24
+ * @desc:缓存工具类
  */
 public class SharedPreferenceUtil {
 

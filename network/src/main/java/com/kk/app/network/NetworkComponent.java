@@ -266,33 +266,22 @@ public class NetworkComponent implements IComponent {
      * 给网络请求添加head
      */
     private void addHeaders(Request.Builder builder, JSONObject params) {
-        try {
-            String headers = params.optString(NetworkConstant.KEY_HEADER);
-            if (!TextUtils.isEmpty(headers)) {
-                JSONObject heads = new JSONObject(headers);
-                Iterator<String> keys = heads.keys();
-                String key, value;
-                while (keys.hasNext()) {
-                    key = keys.next();
-                    value = heads.optString(key);
-                    Log.e("xp", "------key-----–" + key);
-                    Log.e("xp", "------value-----–" + value);
-                    if (key.contains("Cookie")) {
-                        builder.addHeader("Cookie", value);
-                    } else {
-                        builder.addHeader(key, value);
-                    }
-                    if (NetworkConstant.PRIVATE_KEY_CONTENT_TYPE.equalsIgnoreCase(key)) {
-                        try {
-                            params.put(NetworkConstant.PRIVATE_KEY_CONTENT_TYPE, value);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+        JSONObject heads = params.optJSONObject(NetworkConstant.KEY_HEADER);
+        if (heads != null) {
+            Iterator<String> keys = heads.keys();
+            String key, value;
+            while (keys.hasNext()) {
+                key = keys.next();
+                value = heads.optString(key);
+                builder.addHeader(key, value);
+                if (NetworkConstant.PRIVATE_KEY_CONTENT_TYPE.equalsIgnoreCase(key)) {
+                    try {
+                        params.put(NetworkConstant.PRIVATE_KEY_CONTENT_TYPE, value);
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -309,13 +298,7 @@ public class NetworkComponent implements IComponent {
             if (responseBody != null) {
                 try {
                     String content = responseBody.string();
-                    Map<String, Object> result = new HashMap<>();
-                    result.put(NetworkConstant.KEY_RESULT, content);
-                    if (!response.headers("Set-Cookie").isEmpty()) {
-                        List<String> cookies = response.headers("Set-Cookie");
-                        result.put(NetworkConstant.KEY_RESPONSE_HEADERS, cookies);
-                    }
-                    return CCResult.success(result);
+                    return CCResult.success(NetworkConstant.KEY_RESULT, content);
                 } catch (Exception e) {
                     e.printStackTrace();
                     return CCResult.error(NetworkConstant.KEY_HTTP_CODE, code);

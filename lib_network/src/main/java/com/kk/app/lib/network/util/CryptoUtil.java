@@ -10,12 +10,10 @@ import java.security.NoSuchAlgorithmException;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
-
-
 /**
- * description:加解密工具类
- * author: mlp00
- * date: 2017/8/23 14:21
+ * @author kk
+ * @datetime: 2020/4/24
+ * @desc:
  */
 public class CryptoUtil {
     private static final String TAG = CryptoUtil.class.getSimpleName();

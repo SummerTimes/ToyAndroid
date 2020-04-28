@@ -4,7 +4,6 @@ import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import io.reactivex.annotations.Nullable;
 
 /**
  * @author billy.qi
@@ -16,7 +15,6 @@ public abstract class BaseFloorHolder<T> extends RecyclerView.ViewHolder {
         super(itemView);
     }
 
-    public @Nullable
     String TAG;
 
     /**
