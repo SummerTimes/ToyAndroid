@@ -20,7 +20,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kk.app.lib.widget.NoDoubleClickListener;
-import com.kk.app.lib.widget.neterror.NeterrorLayout;
 import com.kk.app.login.R;
 import com.kk.app.util.NetUtil;
 import org.json.JSONException;
@@ -39,7 +38,7 @@ public class WebActivity extends AppCompatActivity {
     public static final String HIDE_TITLE = "hide_title";
     public static final String TAG = "xp";
 
-    public NeterrorLayout neterror;
+//    public NeterrorLayout neterror;
     public RelativeLayout rltTitle;
     public TextView tvTitle;
     public ImageView ivBack;
@@ -61,8 +60,8 @@ public class WebActivity extends AppCompatActivity {
         webContent = findViewById(R.id.web_content);
         rltTitle = findViewById(R.id.rlt_title);
         tvTitle = findViewById(R.id.tv_title);
-        ivBack = findViewById(R.id.iv_back);
-        neterror = findViewById(R.id.nel_error);
+//        ivBack = findViewById(R.id.iv_back);
+//        neterror = findViewById(R.id.nel_error);
         initialWebSetting();
     }
 
@@ -129,13 +128,13 @@ public class WebActivity extends AppCompatActivity {
     }
 
     private void noNet() {
-        neterror.onTimeoutError();
+//        neterror.onTimeoutError();
         webContent.setVisibility(View.GONE);
     }
 
     private void hasNet() {
         webContent.setVisibility(View.VISIBLE);
-        neterror.onConnected();
+//        neterror.onConnected();
 
         webContent.setWebChromeClient(new WebChromeClient());
         webContent.setWebViewClient(new WebViewClient() {

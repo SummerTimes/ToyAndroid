@@ -3,14 +3,10 @@ package com.kk.app.mobile
 import android.app.Application
 import android.text.TextUtils
 import android.util.Log
-import com.didichuxing.doraemonkit.DoraemonKit
-import com.didichuxing.doraemonkit.kit.IKit
 import com.kk.app.lib.network.NetworkConfig
 import com.kk.app.lib.widget.component.ComponentManager
 import com.kk.app.lib.widget.component.IComponentInit
 import com.kk.app.mobile.utils.AppDeviceUtil
-import com.kk.app.mobile.utils.EnvSwitchKit
-import java.util.*
 
 
 /**
@@ -26,7 +22,6 @@ class MemberApplication : Application() {
         super.onCreate()
         NetworkConfig.setup(this, getNetWorkType())
         initComponent(this);
-        initAmbientKit();
     }
 
     /**
@@ -51,14 +46,5 @@ class MemberApplication : Application() {
             }
         }
         return envType
-    }
-
-    /**
-     * 初始化滴滴环境工具
-     */
-    private fun initAmbientKit() {
-        val kits: MutableList<IKit> = ArrayList()
-        kits.add(EnvSwitchKit())
-        DoraemonKit.install(this, kits)
     }
 }

@@ -10,12 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="44dp">
 
-        <ImageView
-            android:id="@+id/iv_back"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:scaleType="centerInside"
-            android:src="@drawable/bl_default_back" />
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_back"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scaleType="centerInside"-->
+<!--            android:src="@drawable/bl_default_back" />-->
 
         <TextView
             android:id="@+id/tv_title"
@@ -38,10 +38,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.kk.app.lib.widget.neterror.NeterrorLayout
-        android:id="@+id/nel_error"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+<!--    <com.kk.app.lib.widget.neterror.NeterrorLayout-->
+<!--        android:id="@+id/nel_error"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
 
 
 </LinearLayout>

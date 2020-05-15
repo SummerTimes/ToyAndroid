@@ -1,18 +1,19 @@
 include ':app'
 
-//include ':lib_util'
-//include ':lib_web'
-//include ':lib_image'
-//include ':lib_widget'
-//include ':lib_banner'
-//include ':lib_rv'
-//include ':webview'
-include ':lib_basecommon'
-
 //include ':network'
 //include ':pre_loader'
 //include ':lib_network'
 //include ':lib_interceptor'
+
+//include ':lib_rv'
+//include ':lib_util'
+//include ':lib_image'
+//include ':lib_widget'
+//include ':lib_banner'
+//include ':lib_basecommon'
+
+//include ':webview'
+//include ':lib_web'
 
 include ':login'
 include ':lore'

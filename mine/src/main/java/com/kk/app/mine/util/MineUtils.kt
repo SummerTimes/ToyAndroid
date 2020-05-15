@@ -7,6 +7,7 @@ import com.billy.cc.core.component.CC
 import com.kk.app.lib.widget.BLToast
 import com.kk.app.mine.activity.MineActivity
 import com.kk.app.mine.constant.MineConstant
+import com.kk.app.mine.demo.example.DemoListActivity
 
 /**
  * @author kk
@@ -26,11 +27,12 @@ object MineUtils {
             return
         }
         val context = cc.context
-        val intent = Intent(context, MineActivity::class.java)
+//        val intent = Intent(context, MineActivity::class.java)
+        val intent = Intent(context, DemoListActivity::class.java)
         if (context !is Activity) {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
-        intent.putExtra(MineConstant.Companion.KRY_PARAM, param)
+        intent.putExtra(MineConstant.KRY_PARAM, param)
         context.startActivity(intent)
     }
 }

@@ -14,17 +14,18 @@ import com.kk.app.mine.util.MineUtils
  * @desc: Mine/Component
  */
 class MineComponent : IComponent {
+
     override fun getName(): String {
-        return MineConstant.Companion.KRY_MINE_COMPONENT
+        return MineConstant.KRY_MINE_COMPONENT
     }
 
     override fun onCall(cc: CC): Boolean {
         val actionName = cc.actionName
         // 我的/Activity
-        if (TextUtils.equals(MineConstant.Companion.KRY_MINE_ACTIVITY, actionName)) {
+        if (TextUtils.equals(MineConstant.KRY_MINE_ACTIVITY, actionName)) {
             MineUtils.openMineActivity(cc)
             CC.sendCCResult(cc.callId, CCResult.success())
-        } else if (TextUtils.equals(MineConstant.Companion.KRY_MINE_FRAGMENT, actionName)) {
+        } else if (TextUtils.equals(MineConstant.KRY_MINE_FRAGMENT, actionName)) {
             CC.sendCCResult(cc.callId, CCResult.success("fragment", MineFragment.Companion.newInstance("我的")))
             return true
         } else {

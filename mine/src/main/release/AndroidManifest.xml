@@ -6,6 +6,20 @@
         <activity
             android:name=".activity.MineActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.kk.app.mine.demo.example.DemoListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.kk.app.mine.demo.example.TangramActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.kk.app.mine.demo.example.tangram3.Tangram3Activity"
+            android:screenOrientation="portrait" />
+
     </application>
+
 
 </manifest>

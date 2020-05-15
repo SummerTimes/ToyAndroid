@@ -38,6 +38,7 @@ dependencies {
     api rootProject.ext.deps.lib_rv
     api rootProject.ext.deps.lib_widget
     api rootProject.ext.deps.lib_network
+    api rootProject.ext.deps.lib_basecommon
     api rootProject.ext.deps.kotlin_stdlib_jdk7
 }
 
