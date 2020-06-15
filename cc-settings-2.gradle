@@ -14,28 +14,32 @@ repositories {
 android {
     compileSdkVersion rootProject.compileVersion
 
+    signingConfigs {//签名配置
+        release {//发布版签名配置
+            storeFile rootProject.file("kk.jks")//密钥文件路径
+            storePassword "dong316727"//密钥文件密码
+            keyAlias "kk"//key别名
+            keyPassword "dong316727"//key密码
+        }
+    }
+
     buildTypes {
         def networkEnvType = networkEnvType as String
         release {
             minifyEnabled true
             zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            signingConfig signingConfigs.release//设置签名信息
+            signingConfig signingConfigs.release//设置签名信息
             buildConfigField("String", "networkEnvType", "\"" + networkEnvType + "\"")
         }
         debug {
             minifyEnabled false
             zipAlignEnabled true//字节对齐，运行效果更好
             shrinkResources false//去除无用资源
-//            signingConfig signingConfigs.release//设置签名信息
+            signingConfig signingConfigs.release//设置签名信息
             buildConfigField("String", "networkEnvType", "\"" + networkEnvType + "\"")
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-
-    packagingOptions {
-        exclude 'lib/mips64/*.so'
-        exclude 'lib/mips/*.so'
     }
 }
 

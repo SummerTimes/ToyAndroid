@@ -2,6 +2,7 @@ ext.mainApp = true
 apply from: rootProject.file('cc-settings-2.gradle')
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'walle'
 
 android {
     compileSdkVersion rootProject.compileVersion
@@ -14,20 +15,21 @@ android {
         targetSdkVersion rootProject.compileVersion
         versionCode 1
         versionName "1.0.1"
-        multiDexEnabled true
     }
 
-    buildTypes {
-        release {
-            debuggable false
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
+
+walle {
+    // 指定渠道包的输出路径
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels")
+    // 定制渠道包的APK的文件名称
+    apkFileNameFormat = '${appName}-${channel}-${buildType}-v${versionName}.apk'
+    // 渠道配置文件
+    channelFile = new File("${project.getProjectDir()}/channel")
 }
 
 dependencies {
@@ -36,14 +38,11 @@ dependencies {
     api rootProject.ext.deps.appcompat
     api rootProject.ext.deps.constraintlayout
 
-//    api rootProject.ext.deps.product
-    implementation project(':product')
-//    api rootProject.ext.deps.mine
-    implementation project(':mine')
-//    api rootProject.ext.deps.login
-    implementation project(':login')
-//    api rootProject.ext.deps.lore
-    implementation project(':lore')
+    api rootProject.ext.deps.product
+    api rootProject.ext.deps.mine
+//    implementation project(':mine')
+    api rootProject.ext.deps.login
+    api rootProject.ext.deps.lore
 
     api rootProject.ext.deps.webview
     api rootProject.ext.deps.lib_util
@@ -53,8 +52,8 @@ dependencies {
     api rootProject.ext.deps.lib_network
     api rootProject.ext.deps.lib_basecommon
 
-    api 'com.airbnb.android:lottie:3.4.0'
-    api 'com.android.support:multidex:1.0.3'
+    implementation 'com.meituan.android.walle:library:1.1.6'
+    implementation "com.bytedance.boost_multidex:boost_multidex:1.0.0"
     api 'org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.3.72'
 }
 

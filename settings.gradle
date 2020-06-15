@@ -15,9 +15,9 @@ include ':app'
 //include ':webview'
 //include ':lib_web'
 
-include ':login'
-include ':lore'
-include ':mine'
-include ':product'
+//include ':login'
+//include ':lore'
+//include ':mine'
+//include ':product'
 
 

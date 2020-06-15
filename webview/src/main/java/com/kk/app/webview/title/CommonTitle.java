@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.kk.app.lib.widget.BLToast;
 import com.kk.app.web.bljsbridge.BridgeWebView;
+import com.kk.app.web.bljsbridge.OnUrlChangeListener;
 import com.klcw.app.web.R;
 
 /**
@@ -29,6 +30,20 @@ public class CommonTitle extends BaseTitle {
     @Override
     public void registerFunction(final BridgeWebView bridgeWebView) {
         super.registerFunction(bridgeWebView);
+        bridgeWebView.registerOnUrlChangeListener(new OnUrlChangeListener() {
+            @Override
+            public boolean onChangeUrl(String url) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onPageStarted(String url) {
+                return false;
+            }
+        });
+
+
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

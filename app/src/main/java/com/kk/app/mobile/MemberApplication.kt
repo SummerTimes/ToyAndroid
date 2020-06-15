@@ -1,8 +1,10 @@
 package com.kk.app.mobile
 
 import android.app.Application
+import android.content.Context
 import android.text.TextUtils
 import android.util.Log
+import com.bytedance.boost_multidex.BoostMultiDex
 import com.kk.app.lib.network.NetworkConfig
 import com.kk.app.lib.widget.component.ComponentManager
 import com.kk.app.lib.widget.component.IComponentInit
@@ -17,6 +19,12 @@ import com.kk.app.mobile.utils.AppDeviceUtil
 class MemberApplication : Application() {
 
     private val TAG = "xp"
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        BoostMultiDex.install(base)
+    }
+
 
     override fun onCreate() {
         super.onCreate()
@@ -38,7 +46,6 @@ class MemberApplication : Application() {
         var envType: String? = BuildConfig.networkEnvType
         if (BuildConfig.DEBUG) {
             val type: String = AppDeviceUtil.getNetWorkType(this)
-            Log.e(TAG, "------type----"+type);
             if (TextUtils.isEmpty(type)) {
                 AppDeviceUtil.setNetWorkType(this, BuildConfig.networkEnvType)
             } else {
