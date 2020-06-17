@@ -12,7 +12,7 @@ import androidx.viewpager.widget.PagerAdapter;
  * @desc:
  */
 public abstract class AbstractPagerAdapter extends PagerAdapter {
-    private SparseArray<View> mViews;
+    private final SparseArray<View> mViews;
 
     public AbstractPagerAdapter() {
         mViews = new SparseArray<>();

@@ -34,10 +34,6 @@ class TestFragment : Fragment() {
         textView.text = mParam
     }
 
-    override fun onDetach() {
-        super.onDetach()
-    }
-
     companion object {
         private const val ARG_PARAM = "param"
         fun newInstance(param: String?): TestFragment {

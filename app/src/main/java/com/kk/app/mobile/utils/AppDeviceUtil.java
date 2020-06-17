@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.kk.app.mobile.constant.AppConstant;
-import com.kk.app.util.SharedPreferenceUtil;
+import com.kk.app.util.LuPreferenceUtil;
 import com.meituan.android.walle.WalleChannelReader;
 
 
@@ -32,7 +32,7 @@ public class AppDeviceUtil {
      * @return
      */
     public static String getNetWorkType(Context context) {
-        return SharedPreferenceUtil.getStringValueFromSP(context, AppConstant.APP_NET_WORK, AppConstant.NET_TYPE, "");
+        return LuPreferenceUtil.getStringValueFromSP(context, AppConstant.APP_NET_WORK, AppConstant.NET_TYPE, "");
     }
 
     /**
@@ -42,7 +42,7 @@ public class AppDeviceUtil {
      * @param type
      */
     public static void setNetWorkType(Context context, String type) {
-        SharedPreferenceUtil.setStringDataIntoSP(context, AppConstant.APP_NET_WORK, AppConstant.NET_TYPE, type);
+        LuPreferenceUtil.setStringDataIntoSP(context, AppConstant.APP_NET_WORK, AppConstant.NET_TYPE, type);
     }
 
 }

@@ -15,6 +15,7 @@ android {
         targetSdkVersion rootProject.compileVersion
         versionCode 1
         versionName "1.0.1"
+        multiDexEnabled true
     }
 
     compileOptions {
@@ -34,26 +35,23 @@ walle {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api rootProject.ext.deps.kotlin_stdlib_jdk7
-    api rootProject.ext.deps.appcompat
-    api rootProject.ext.deps.constraintlayout
 
-    api rootProject.ext.deps.product
-    api rootProject.ext.deps.mine
 //    implementation project(':mine')
+    api rootProject.ext.deps.mine
+    api rootProject.ext.deps.product
     api rootProject.ext.deps.login
     api rootProject.ext.deps.lore
 
     api rootProject.ext.deps.webview
-    api rootProject.ext.deps.lib_util
     api rootProject.ext.deps.lib_image
     api rootProject.ext.deps.lib_banner
     api rootProject.ext.deps.lib_widget
     api rootProject.ext.deps.lib_network
-    api rootProject.ext.deps.lib_basecommon
+    api rootProject.ext.deps.lib_common
+    api rootProject.ext.deps.constraintlayout
 
-    implementation 'com.meituan.android.walle:library:1.1.6'
-    implementation "com.bytedance.boost_multidex:boost_multidex:1.0.0"
+    api 'com.meituan.android.walle:library:1.1.6'
+    api 'com.bytedance.boost_multidex:boost_multidex:1.0.0'
     api 'org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.3.72'
 }
 

@@ -19,8 +19,8 @@ public class DiskCache implements ICache {
      */
     private static final long MAX_CACHE_SIZE = 100 * 1024 * 1024;
 
-    private int versionCode;
-    private File diskCacheDir;
+    private final int versionCode;
+    private final File diskCacheDir;
 
 
     public DiskCache(int appVersion, File cacheDir) {

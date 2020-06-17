@@ -19,7 +19,7 @@ import org.json.JSONObject;
  */
 public final class ECardTitle extends BaseTitle {
 
-    private static String CHANGE_STATE = "BLElectronCard" + "#" + "exchangeState";
+    private static final String CHANGE_STATE = "BLElectronCard" + "#" + "exchangeState";
 
     private BridgeWebView mBridgeWebView;
     private String mType = BACH_MANAGER;

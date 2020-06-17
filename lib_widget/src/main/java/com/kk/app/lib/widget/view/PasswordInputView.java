@@ -30,13 +30,13 @@ public class PasswordInputView extends AppCompatEditText {
     private int borderColor = getResources().getColor(R.color.lw_color_ddd);
     private int passwordWidth = 12; //px
     private int passwordColor = 0xff000000;
-    private int defaultSplitLineWidth = 3; //px
+    private final int defaultSplitLineWidth = 3; //px
 
     private Paint borderPaint;
     private Paint passwordPaint;
 
     private int textLength;
-    private int defaultContentMargin = 2;
+    private final int defaultContentMargin = 2;
     private String originText;
     private OnFinishListener onFinishListener;
 
@@ -247,7 +247,7 @@ public class PasswordInputView extends AppCompatEditText {
     }
 
     public interface OnFinishListener {
-        public void setOnPasswordFinished();
+        void setOnPasswordFinished();
     }
 
 }

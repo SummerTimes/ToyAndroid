@@ -39,8 +39,4 @@ dependencies {
     api 'com.alibaba.android:tangram:3.5.9'
     api 'com.squareup.picasso:picasso:2.5.2'
     api rootProject.ext.deps.lib_rv
-    api rootProject.ext.deps.lib_widget
-    api rootProject.ext.deps.lib_network
-    api rootProject.ext.deps.lib_basecommon
-    api rootProject.ext.deps.kotlin_stdlib_jdk7
 }

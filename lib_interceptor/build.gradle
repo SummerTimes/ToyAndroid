@@ -22,7 +22,6 @@ android {
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     api rootProject.ext.deps.cc
-    api rootProject.ext.deps.lib_util
     api "com.google.code.gson:gson:2.8.6"
     api "com.jakewharton:disklrucache:2.0.2"
 }

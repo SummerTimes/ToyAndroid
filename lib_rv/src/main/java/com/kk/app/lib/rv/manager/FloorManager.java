@@ -25,7 +25,7 @@ import java.util.List;
 public class FloorManager {
 
     private final RecyclerView.Adapter mAdapter;
-    private List<IFloorCombine> mFloorCombines = new ArrayList<>();
+    private final List<IFloorCombine> mFloorCombines = new ArrayList<>();
 
     private final List<Object> mTotalFloors = new ArrayList<>();
 

@@ -12,7 +12,7 @@ import java.util.concurrent.ExecutorService;
  */
 public class PreLoaderWrapper<T> {
 
-    private Worker<T> worker;
+    private final Worker<T> worker;
 
     PreLoaderWrapper(DataLoader<T> loader, DataListener<T> listener) {
         this.worker = new Worker<>(loader, listener);

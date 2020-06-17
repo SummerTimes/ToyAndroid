@@ -87,9 +87,9 @@ public class WordWrapView extends ViewGroup {
 			return;
 		}
 	    }
-	  };
+	  }
 
-	  @Override
+    @Override
 	  protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 	    int x = 0;//横坐标
 	    int y = 0;//纵坐标
@@ -127,7 +127,7 @@ public class WordWrapView extends ViewGroup {
 	}
 
 	public interface ItemViewClickListener{
-		public void click(View view, int item);
+		void click(View view, int item);
 	}
 	
 	@Override

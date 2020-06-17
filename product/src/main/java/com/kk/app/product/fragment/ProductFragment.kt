@@ -29,7 +29,7 @@ class ProductFragment : Fragment() {
             rootView = inflater.inflate(R.layout.pt_main_fragment, container, false)
         } else {
             val viewGroup = rootView!!.parent as ViewGroup
-            viewGroup?.removeView(rootView)
+            viewGroup.removeView(rootView)
         }
         initView()
         return rootView
@@ -43,10 +43,6 @@ class ProductFragment : Fragment() {
                     .build()
                     .callAsync()
         }
-    }
-
-    override fun onDetach() {
-        super.onDetach()
     }
 
     companion object {

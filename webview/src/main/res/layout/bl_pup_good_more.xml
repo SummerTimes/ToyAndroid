@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/message"
-                    android:textColor="@color/white" />
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
         </LinearLayout>
 
@@ -103,7 +103,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/home"
-                    android:textColor="@color/white" />
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
         </LinearLayout>
 
@@ -152,7 +152,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/search"
-                    android:textColor="@color/white" />
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
         </LinearLayout>
 
@@ -202,7 +202,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/my_search"
-                    android:textColor="@color/white" />
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
         </LinearLayout>
 
@@ -253,7 +253,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/browsing_history"
-                    android:textColor="@color/white" />
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

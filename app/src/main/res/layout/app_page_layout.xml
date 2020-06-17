@@ -94,7 +94,6 @@
                 android:id="@+id/im_mine"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                android:layout_marginStart="3dp"
                 android:src="@mipmap/app_mine"
                 android:visibility="visible" />
 

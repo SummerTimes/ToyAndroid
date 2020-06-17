@@ -44,7 +44,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class SonicRuntimeImpl extends SonicRuntime {
 
     static ThreadFactory factory = new ThreadFactory() {
-        AtomicInteger integer = new AtomicInteger(1);
+        final AtomicInteger integer = new AtomicInteger(1);
         @Override
         public Thread newThread(@NonNull Runnable r) {
             String name = "SonicPool-"+integer.getAndIncrement();

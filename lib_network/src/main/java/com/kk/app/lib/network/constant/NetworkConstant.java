@@ -9,6 +9,7 @@ package com.kk.app.lib.network.constant;
 public interface NetworkConstant {
 
     String HTTP = "http://";
+
     String HTTPS = "https://";
 
     String KEY_DATA_RESPONSE = "obj";

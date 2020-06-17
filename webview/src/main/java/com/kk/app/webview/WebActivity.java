@@ -60,7 +60,7 @@ public class WebActivity extends AppCompatActivity {
     private SonicSessionClientImpl sonicSessionClient;
 
     private static final String PARAM = "params";
-    private Stack<ITitle> mTitleStack = new Stack<>();
+    private final Stack<ITitle> mTitleStack = new Stack<>();
 
     /**
      * start WebActivity

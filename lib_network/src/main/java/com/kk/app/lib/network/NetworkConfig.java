@@ -5,14 +5,9 @@ import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.Log;
 
-import com.google.gson.Gson;
-import com.kk.app.lib.network.util.DeviceUtil;
-import com.kk.app.lib.network.util.SharedPreferenceUtil;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Map;
 
 
 /**
@@ -26,7 +21,6 @@ public class NetworkConfig {
 
     public static Context mContext;
     public static NetworkConfig sInstance;
-    public static String memberToken = "";
     public static String networkEnvType = "";
     public static ArrayMap<String, String> urlConfig;
 

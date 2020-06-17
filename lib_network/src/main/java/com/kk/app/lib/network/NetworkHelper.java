@@ -12,19 +12,13 @@ import com.billy.cc.core.component.CC;
 import com.billy.cc.core.component.CCResult;
 import com.billy.cc.core.component.IComponentCallback;
 import com.google.gson.Gson;
-import com.kk.app.lib.interceptor.DES;
-import com.kk.app.lib.interceptor.NetworkCookieInterceptor;
 import com.kk.app.lib.interceptor.NetworkEncryptInterceptor;
 import com.kk.app.lib.interceptor.NetworkGsonInterceptor;
-import com.kk.app.lib.interceptor.NetworkOpenApiInterceptor;
 import com.kk.app.lib.interceptor.cache.CacheOption;
 import com.kk.app.lib.network.constant.NetworkConstant;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.Map;
-import java.util.Set;
 
 /**
  * @author kk
@@ -37,7 +31,7 @@ public class NetworkHelper {
     /**
      * 默认重试次数
      */
-    private static int RETRY_NUM = 1;
+    private static final int RETRY_NUM = 1;
 
     public static final String HTTP_GET = "get";
     public static final String HTTP_POST = "post";
@@ -176,7 +170,7 @@ public class NetworkHelper {
                 .addParam("url", genAppMwUrl(url))
                 .addParam("headers", getHeaderForMiddle(currentTime))
                 .addParam("data", data)
-                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
+//                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
                 .addInterceptor(new NetworkGsonInterceptor(callback))
                 .addInterceptor(NetworkEncryptInterceptor.get());
     }
@@ -250,7 +244,7 @@ public class NetworkHelper {
                 .addParam("url", genAppMwUrl(url))
                 .addParam("headers", getHeaderForMiddle(currentTime))
                 .addParam("data", data)
-                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
+//                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
                 .addInterceptor(new NetworkGsonInterceptor(callback))
                 .addInterceptor(NetworkEncryptInterceptor.get());
     }
@@ -328,7 +322,7 @@ public class NetworkHelper {
                 .addParam("url", genAppMwUrl(url))
                 .addParam("headers", getHeaderForMiddle(currentTime))
                 .addParam("data", data)
-                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
+//                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
                 .addInterceptor(new NetworkGsonInterceptor(callback))
                 .addInterceptor(NetworkEncryptInterceptor.get());
 
@@ -445,7 +439,7 @@ public class NetworkHelper {
                 .addParam("url", genAppMwUrl(url))
                 .addParam("headers", getHeaderForMiddle(currentTime))
                 .addParam("data", data)
-                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
+//                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
                 .addInterceptor(NetworkEncryptInterceptor.get());
     }
 
@@ -542,7 +536,7 @@ public class NetworkHelper {
                 .addParam("url", genAppMwUrl(url))
                 .addParam("headers", getHeaderForMiddle(currentTime))
                 .addParam("data", data)
-                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
+//                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
                 .addInterceptor(NetworkEncryptInterceptor.get());
 
         if (cacheOption != null && !TextUtils.isEmpty(cacheOption.cacheType)) {
@@ -615,7 +609,7 @@ public class NetworkHelper {
                 .addParam("url", genAppMwUrl(url))
                 .addParam("headers", getHeaderForMiddle(currentTime))
                 .addParam("data", data)
-                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
+//                .addParam("cryptoKey", DynamicKeyManager.getEncryptKey(currentTime))
                 .addInterceptor(new NetworkGsonInterceptor(callback))
                 .addInterceptor(NetworkEncryptInterceptor.get());
     }
@@ -750,7 +744,7 @@ public class NetworkHelper {
             //2.5.0以下的密钥不一样
             header.put("version", getCurrentVersionName(CC.getApplication()));
             header.put("timeStamp", currentTime);
-            header.put("deskeyVersion", DynamicKeyManager.KEY_VERSION);
+//            header.put("deskeyVersion", DynamicKeyManager.KEY_VERSION);
         } catch (Exception e) {
             e.printStackTrace();
         }

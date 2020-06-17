@@ -10,7 +10,7 @@ include ':app'
 //include ':lib_image'
 //include ':lib_widget'
 //include ':lib_banner'
-//include ':lib_basecommon'
+//include ':lib_common'
 
 //include ':webview'
 //include ':lib_web'

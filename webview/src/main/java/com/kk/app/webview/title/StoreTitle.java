@@ -51,7 +51,6 @@ public class StoreTitle extends BaseTitle {
                                     String latitude = ccResultData.optString("latitude");
                                     String longitude = ccResultData.optString("longitude");
                                     String address = ccResultData.optString("address");
-                                    ;
                                     try {
 //                                        JSONObject jsonObject = new JSONObject();
 //                                        jsonObject.put("url", NetworkConfig.getH5Url() + "#/nearby?lat=" + latitude + "&lon= " + longitude);

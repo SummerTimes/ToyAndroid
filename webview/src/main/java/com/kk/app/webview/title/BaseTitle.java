@@ -30,8 +30,8 @@ public abstract class BaseTitle implements ITitle {
     private View mView;
     protected String mMethodUrl;
     protected IJSCallFunction mCallFunction;
-    private WeakReference<Activity> mActivity;
-    private Stack<String> mTitleStack = new Stack<>();
+    private final WeakReference<Activity> mActivity;
+    private final Stack<String> mTitleStack = new Stack<>();
     String SET_TITLE = "title" + "#" + "title";
 
     public BaseTitle(Activity activity) {

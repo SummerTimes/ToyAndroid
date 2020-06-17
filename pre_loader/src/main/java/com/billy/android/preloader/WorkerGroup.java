@@ -20,7 +20,7 @@ import static com.billy.android.preloader.PreLoader.logger;
  * @since 18/1/23 14:32
  */
 class WorkerGroup implements IWorker {
-    private Collection<Worker> workers;
+    private final Collection<Worker> workers;
 
     WorkerGroup(GroupedDataLoader[] loaders) {
         if (loaders != null) {

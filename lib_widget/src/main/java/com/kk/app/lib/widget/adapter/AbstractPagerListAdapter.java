@@ -10,7 +10,7 @@ import java.util.List;
  * @desc:
  */
 public abstract class AbstractPagerListAdapter<T> extends AbstractPagerAdapter {
-    private List<T> mData;
+    private final List<T> mData;
 
     public AbstractPagerListAdapter(List<T> data) {
         mData = data;

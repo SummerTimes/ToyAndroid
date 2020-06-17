@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/title_height"
-    android:background="@color/white">
+    android:background="#FFFFFF">
 
 
     <ImageView
@@ -25,7 +25,7 @@
         android:gravity="center"
         android:maxEms="8"
         android:singleLine="true"
-        android:textColor="@color/color_title_text"
+        android:textColor="#000000"
         android:textSize="18sp"
         tools:text="标题" />
 

@@ -13,7 +13,7 @@ import com.kk.app.lib.rv.BaseFloorHolder;
  */
 public class FloorTitleTextHolder extends BaseFloorHolder<Floor<TitleTextUnit>> {
 
-    private TextView editText;
+    private final TextView editText;
 
     public FloorTitleTextHolder(View itemView) {
         super(itemView);

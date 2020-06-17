@@ -32,10 +32,6 @@
                 android:resource="@xml/shortcuts" />
         </activity>
 
-        <activity
-            android:name=".activity.AppNetWorkActivity"
-            android:screenOrientation="portrait" />
-
     </application>
 
 </manifest>

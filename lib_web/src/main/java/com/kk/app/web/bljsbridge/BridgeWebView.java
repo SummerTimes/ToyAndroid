@@ -261,7 +261,6 @@ public class BridgeWebView extends WebView {
 
     }
 
-
     public void callJs(final String name, final String arguments) {
         BridgeWebView.this.post(new Runnable() {
             @Override
@@ -272,11 +271,4 @@ public class BridgeWebView extends WebView {
         });
 
     }
-
-
-    private void clear() {
-
-
-    }
-
 }

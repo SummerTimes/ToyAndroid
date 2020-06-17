@@ -58,7 +58,7 @@
             android:id="@+id/two_lines_main"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
-            android:textColor="@color/commodity_color_d"
+            android:textColor="#000000"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -66,7 +66,7 @@
             android:id="@+id/two_lines_hint"
             android:layout_width="wrap_content"
             android:layout_height="15dp"
-            android:textColor="@color/commodity_color_d"
+            android:textColor="#000000"
             android:textSize="11sp"
             tools:ignore="SmallSp" />
     </LinearLayout>
@@ -78,7 +78,7 @@
         android:layout_height="match_parent"
         android:layout_toEndOf="@id/title_btn_left"
         android:gravity="center_vertical"
-        android:textColor="@color/black"
+        android:textColor="#000000"
         android:textSize="14sp" />
 
 

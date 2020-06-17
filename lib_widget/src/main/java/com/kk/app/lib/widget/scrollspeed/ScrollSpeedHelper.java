@@ -13,7 +13,7 @@ import java.lang.reflect.Field;
  * @desc:
  */
 public class ScrollSpeedHelper {
-    private static int durationSwitch = 500;
+    private static final int durationSwitch = 500;
 
     /**
      * @param viewpager ViewPager控件

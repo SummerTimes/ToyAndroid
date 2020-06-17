@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class ComponentManager {
 
-    private static List<IComponentInit> APPLICATION = new ArrayList<>();
+    private static final List<IComponentInit> APPLICATION = new ArrayList<>();
 
     static void register(IComponentInit component) {
         if (component != null) {

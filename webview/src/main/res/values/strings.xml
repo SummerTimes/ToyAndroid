@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">web</string>
     <string name="batch_manager">批量管理</string>
     <string name="bl_recharge_record">充值记录</string>
     <string name="day_sign_direction">签到说明</string>
@@ -12,5 +11,4 @@
     <string name="search">搜索</string>
     <string name="my_search">我的关注</string>
     <string name="browsing_history">浏览记录</string>
-    <string name="nologin_msg">亲,请先登录一下哦.:)</string>
 </resources>

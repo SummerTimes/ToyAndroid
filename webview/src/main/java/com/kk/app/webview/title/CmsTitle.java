@@ -25,7 +25,7 @@ public class CmsTitle extends BaseTitle {
     private View back;
     private View cart;
     private View share;
-    private String SHOW_SHARE = "BLCMSWebViewController" + "#" + "setNeedShowShareButton";
+    private final String SHOW_SHARE = "BLCMSWebViewController" + "#" + "setNeedShowShareButton";
 
     public CmsTitle(Activity activity) {
         super(activity);

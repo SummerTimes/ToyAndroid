@@ -5,6 +5,7 @@ import android.util.Log;
 
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -49,7 +50,7 @@ public class MD5Utils {
         byte[] hash;
         try {
             hash = MessageDigest.getInstance("MD5").digest(
-                    string.getBytes("UTF-8"));
+                    string.getBytes(StandardCharsets.UTF_8));
             StringBuilder hex = new StringBuilder(hash.length * 2);
             for (byte b : hash) {
                 if ((b & 0xFF) < 0x10) {
@@ -59,8 +60,6 @@ public class MD5Utils {
             }
             return hex.toString();
         } catch (NoSuchAlgorithmException e) {
-            Log.e(TAG, e.getMessage());
-        } catch (UnsupportedEncodingException e) {
             Log.e(TAG, e.getMessage());
         }
         return "";

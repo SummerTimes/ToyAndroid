@@ -29,7 +29,7 @@ class MemberApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         NetworkConfig.setup(this, getNetWorkType())
-        initComponent(this);
+        initComponent(this)
     }
 
     /**

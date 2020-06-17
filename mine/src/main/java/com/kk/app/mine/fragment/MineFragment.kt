@@ -30,7 +30,7 @@ class MineFragment : Fragment() {
             rootView = inflater.inflate(R.layout.mine_fragment, container, false)
         } else {
             val viewGroup = rootView!!.parent as ViewGroup
-            viewGroup?.removeView(rootView)
+            viewGroup.removeView(rootView)
         }
         initView()
         return rootView
@@ -44,10 +44,6 @@ class MineFragment : Fragment() {
                     .build()
                     .callAsync()
         }
-    }
-
-    override fun onDetach() {
-        super.onDetach()
     }
 
     companion object {

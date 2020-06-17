@@ -7,14 +7,14 @@ import java.util.List;
 
 public class SampleScrollSupport {
     public interface IScrollListener {
-        public void onScrollStateChanged(RecyclerView recyclerView, int newState);
+        void onScrollStateChanged(RecyclerView recyclerView, int newState);
 
-        public void onScrolled(RecyclerView recyclerView, int dx, int dy);
+        void onScrolled(RecyclerView recyclerView, int dx, int dy);
     }
 
-    private RecyclerView recyclerView;
+    private final RecyclerView recyclerView;
 
-    private List<IScrollListener> scrollListeners = new ArrayList<>();
+    private final List<IScrollListener> scrollListeners = new ArrayList<>();
 
     public SampleScrollSupport(RecyclerView recyclerView) {
         this.recyclerView = recyclerView;

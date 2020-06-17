@@ -21,7 +21,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.kk.app.lib.widget.NoDoubleClickListener;
 import com.kk.app.login.R;
-import com.kk.app.util.NetUtil;
+import com.kk.app.util.LuNetUtil;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -71,7 +72,7 @@ public class WebActivity extends AppCompatActivity {
         final WebSettings settings = webContent.getSettings();
         settings.setJavaScriptEnabled(true);
         //setCacheMode，有网络就是使用默认缓存策略
-        if (!NetUtil.checkNet(this)) {
+        if (!LuNetUtil.checkNet(this)) {
             settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         } else {
             settings.setCacheMode(WebSettings.LOAD_DEFAULT);
@@ -120,7 +121,7 @@ public class WebActivity extends AppCompatActivity {
     }
 
     private void checkNet() {
-        if (!NetUtil.checkNet(this)) {
+        if (!LuNetUtil.checkNet(this)) {
             noNet();
         } else {
             hasNet();

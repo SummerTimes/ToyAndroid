@@ -27,7 +27,7 @@ import java.net.URLDecoder;
 public class BridgeWebViewClient extends WebViewClient {
 
     private IWebClientCallBack mCallBack;
-    private BridgeWebView webView;
+    private final BridgeWebView webView;
     private boolean mAlreadyPutIn = true;
     private WebViewClient customClient;
     private WeakReference<SonicSession> wrfSonicSession;

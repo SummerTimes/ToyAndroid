@@ -11,16 +11,6 @@ allprojects {
 
 apply plugin: 'maven'
 
-//task androidJavadocs(type: Javadoc) {
-//    source = android.sourceSets.main.java.srcDirs
-//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-//}
-//
-//task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
-//    classifier = 'javadoc'
-//    from androidJavadocs.destinationDir
-//}
-
 def isLibrary = project.pluginManager.hasPlugin('com.android.library')
 def isJava = project.pluginManager.hasPlugin('java')
 def isGroovy = project.pluginManager.hasPlugin('groovy')
@@ -54,10 +44,10 @@ if (isJava) {
 }
 
 
-def Properties props = new Properties()
+Properties props = new Properties()
 File propFile = project.rootProject.file('artifactory_version.properties')
 props.load(new FileInputStream(propFile))
-def local_mode = props.getProperty("maven_deploy_local") == 'true';
+def local_mode = props.getProperty("maven_deploy_local") == 'true'
 def snapshot = props.getProperty("maven_type") == 'snapshot'
 def libVersion = props.getProperty(project.name) + (snapshot ? '-SNAPSHOT' : '')
 def path = artifactory_contextUrl + "/" + (snapshot ? artifactory_snapshot_repoKey : artifactory_release_repoKey)

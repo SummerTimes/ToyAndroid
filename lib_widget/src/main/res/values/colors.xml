@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
     <color name="lwTransparent">#00000000</color>
-    <color name="lw_text_color_666">#ff666666</color>
-    <color name="lw_fff6f6f">#FF4A4A</color>
     <color name="lw_color_ddd">#DDDDDD</color>
-    <color name="lw_black">#000000</color>
-    <color name="lw_FFF">#FFFFFF</color>
-
-    <color name="legacy_primary">#e6e6e6</color>
-    <color name="black">#000000</color>
-    <color name="white">#ffffff</color>
-    <color name="bg_minicart_btn">#ff8b4b</color>
-    <color name="color_price">#e6133c</color>
-    <color name="color_label_bg">#e6133c</color>
-    <color name="divider">#e6e6e6</color>
     <color name="transparent">#00000000</color>
-
-    <color name="grey">#9C9C9C</color>
-
-    <!--CommodityCategory-->
-    <color name="category_left_line">#F8F8F8</color>
-    <color name="category_left_circle">#FFA500</color>
-    <color name="layout_left_unselect_bg">#F0EFF3</color>
-    <color name="divide_line">#F2F2F2</color>
-
-    <!--cart_list-->
-    <color name="cart_nogoods_bg">#EEEEEE</color>
-    <color name="dialog_clear_cart_textcolor">#303F9F</color>
-
-    <!--QhCategoryActivity-->
-    <color name="azure">#42B9FF</color>
-    <color name="orange">#FF845B</color>
-
-    <color name="whole_station_share_color_a">#fffafafa</color>
-    <color name="commodity_color_d">#333333</color>
-    <color name="text_default">#FF888888</color>
-    <color name="whole_station_share_color_b">#ffe4e4e4</color>
-    <color name="guess_you_like_txt">#444444</color>
-    <color name="ksw_md_solid_normal">#ECECEC</color>
-
-
 </resources>

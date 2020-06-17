@@ -57,5 +57,6 @@ dependencies {
     api rootProject.ext.deps.lib_web
     api rootProject.ext.deps.lib_image
     api rootProject.ext.deps.lib_widget
+    api rootProject.ext.deps.lib_common
     api rootProject.ext.deps.cardview
 }

@@ -21,10 +21,7 @@ public class NetUtils {
         Context applicationContext = context.getApplicationContext();
         boolean wifiConnection = isWIFIConnection(applicationContext);
         boolean mobileConnection = isMobileConnection(applicationContext);
-        if (!wifiConnection && !mobileConnection) {
-            return false;
-        }
-        return true;
+        return wifiConnection || mobileConnection;
     }
 
     /**
@@ -39,7 +36,7 @@ public class NetUtils {
         if (networkInfo == null) {
             return false;
         }
-        return networkInfo.isConnected() ? true : false;
+        return networkInfo.isConnected();
     }
 
     /**

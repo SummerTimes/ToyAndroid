@@ -20,7 +20,7 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class DES {
 
-    private static byte[] iv = {1, 2, 3, 4, 5, 6, 7, 8};
+    private static final byte[] iv = {1, 2, 3, 4, 5, 6, 7, 8};
 
     public static String encryptDES(String encryptString, String encryptKey) throws Exception {
         if (TextUtils.isEmpty(encryptString)) {
@@ -43,7 +43,7 @@ public class DES {
         SecretKeySpec key = new SecretKeySpec(decryptKey.getBytes(), "DES");
         Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
         cipher.init(Cipher.DECRYPT_MODE, key, zeroIv);
-        byte decryptedData[] = cipher.doFinal(byteMi);
+        byte[] decryptedData = cipher.doFinal(byteMi);
 
         return new String(decryptedData);
     }

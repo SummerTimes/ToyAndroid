@@ -33,10 +33,10 @@ class MineActivity : AppCompatActivity(), IUI {
 
     private fun initView() {
         val mRvView = findViewById<RecyclerView>(R.id.rv_view)
-        mAdapter = mMinePresenter!!.adapter
+        mAdapter = mMinePresenter.adapter
         mRvView.layoutManager = LinearLayoutManager(this)
         mRvView.adapter = mMinePresenter.adapter
-        mMinePresenter!!.onUIReady(this)
+        mMinePresenter.onUIReady(this)
     }
 
     /**
@@ -58,6 +58,6 @@ class MineActivity : AppCompatActivity(), IUI {
     }
 
     override fun onCombineRequestInflateUI(combine: IFloorCombine) {
-        mMinePresenter!!.notifyDataChanged(combine)
+        mMinePresenter.notifyDataChanged(combine)
     }
 }

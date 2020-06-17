@@ -16,8 +16,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.kk.app.lib.widget.R;
-import com.kk.app.util.PhoneUtil;
-import com.kk.app.util.UnitUtil;
+import com.kk.app.util.LuSizeUtils;
+import com.kk.app.util.LuUnitUtils;
 
 /**
  * @Auther: yd
@@ -127,15 +127,15 @@ public abstract class BaseNiceDialog extends DialogFragment {
 
             //设置dialog宽度
             if (width == 0) {
-                lp.width = PhoneUtil.getWindowWidth(getContext()) - 2 * UnitUtil.dip2px(margin);
+                lp.width = LuSizeUtils.getWindowWidth(getContext()) - 2 * LuUnitUtils.dip2px(margin);
             } else {
-                lp.width = UnitUtil.dip2px(width);
+                lp.width = LuUnitUtils.dip2px(width);
             }
             //设置dialog高度
             if (height == 0) {
                 lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
             } else {
-                lp.height = UnitUtil.dip2px(height);
+                lp.height = LuUnitUtils.dip2px(height);
             }
 
             //设置dialog进入、退出的动画

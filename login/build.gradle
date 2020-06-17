@@ -36,10 +36,5 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api rootProject.ext.deps.lib_image
-    api rootProject.ext.deps.lib_banner
-    api rootProject.ext.deps.lib_widget
-    api rootProject.ext.deps.lib_network
-    api rootProject.ext.deps.lib_basecommon
-    api rootProject.ext.deps.kotlin_stdlib_jdk7
+    api rootProject.ext.deps.lib_rv
 }

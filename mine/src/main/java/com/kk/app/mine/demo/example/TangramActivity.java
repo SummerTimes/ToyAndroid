@@ -129,7 +129,7 @@ public class TangramActivity extends Activity {
         engine.setVirtualViewTemplate(DEBUG.BIN);
         engine.getService(VafContext.class).setImageLoaderAdapter(new IImageLoaderAdapter() {
 
-            private List<ImageTarget> cache = new ArrayList<ImageTarget>();
+            private final List<ImageTarget> cache = new ArrayList<ImageTarget>();
 
             @Override
             public void bindImage(String uri, final ImageBase imageBase, int reqWidth, int reqHeight) {

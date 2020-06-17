@@ -6,13 +6,13 @@
     android:focusableInTouchMode="true"
     android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/title_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_title_height"
         android:visibility="visible" />
 
-    <com.bailian.weblib.bljsbridge.BridgeWebView
+    <com.kk.app.web.bljsbridge.BridgeWebView
         android:id="@+id/web"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

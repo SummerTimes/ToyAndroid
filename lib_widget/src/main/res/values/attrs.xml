@@ -2,7 +2,6 @@
 <resources>
 
     <declare-styleable name="PasswordInputEdt">
-
         <attr name="isPwd" format="boolean" />
         <attr name="autoCloseKeyBoard" format="boolean" />
         <attr name="isNumber" format="boolean" />
@@ -19,7 +18,6 @@
             <enum name="CIRCLE" value="0" />
             <enum name="XINGHAO" value="1" />
         </attr>
-
     </declare-styleable>
 
 

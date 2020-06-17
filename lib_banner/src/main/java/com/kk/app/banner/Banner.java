@@ -36,7 +36,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     private int mIndicatorMargin = BannerConfig.PADDING_SIZE;
     private int mIndicatorWidth;
     private int mIndicatorHeight;
-    private int indicatorSize;
+    private final int indicatorSize;
     private int bannerStyle = BannerConfig.CIRCLE_INDICATOR;
     private int delayTime = BannerConfig.TIME;
     private int scrollTime = BannerConfig.DURATION;
@@ -57,9 +57,9 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     private int scaleType = 1;
     private List<String> titles;
     private List imageUrls;
-    private List<View> imageViews;
-    private List<ImageView> indicatorImages;
-    private Context context;
+    private final List<View> imageViews;
+    private final List<ImageView> indicatorImages;
+    private final Context context;
     private BannerViewPager viewPager;
     private TextView bannerTitle, numIndicatorInside, numIndicator;
     private LinearLayout indicator, indicatorInside, titleView;
@@ -68,9 +68,9 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     private ViewPager.OnPageChangeListener mOnPageChangeListener;
     private BannerScroller mScroller;
     private OnBannerListener listener;
-    private DisplayMetrics dm;
+    private final DisplayMetrics dm;
 
-    private WeakHandler handler = new WeakHandler();
+    private final WeakHandler handler = new WeakHandler();
 
     public Banner(Context context) {
         this(context, null);
@@ -443,11 +443,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         if (gravity != -1) {
             indicator.setGravity(gravity);
         }
-        if (isScroll && count > 1) {
-            viewPager.setScrollable(true);
-        } else {
-            viewPager.setScrollable(false);
-        }
+        viewPager.setScrollable(isScroll && count > 1);
         if (isAutoPlay) {
             startAutoPlay();
         }

@@ -87,7 +87,7 @@ public class DefaultJsBridgeMediator implements IJSBridgeMediator {
             String[] ss = url.split(BridgeConfig.DATA);
             Log.e(TAG, "------ss---5-------" + ss.toString());
             indentifer = ss[0].split(BridgeConfig.API_BRIDGE_HEADER)[0].split("=")[1];
-            data.data = data.data.replace("\\\\", "\\").replace("\'", "\\'");
+            data.data = data.data.replace("\\\\", "\\").replace("'", "\\'");
             final String jsonData = data.data;
             Log.e(TAG, "------jsonData---6-------" + indentifer);
             Log.e(TAG, "------jsonData---7-------" + jsonData);
