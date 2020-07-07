@@ -26,14 +26,14 @@ android {
     buildTypes {
         def networkEnvType = networkEnvType as String
         release {
-            minifyEnabled true
-            zipAlignEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true // 开启混淆
+            zipAlignEnabled true //字节对齐，运行效果更好
             signingConfig signingConfigs.release//设置签名信息
             buildConfigField("String", "networkEnvType", "\"" + networkEnvType + "\"")
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled false
+            minifyEnabled false // 关闭混淆
             zipAlignEnabled true//字节对齐，运行效果更好
             shrinkResources false//去除无用资源
             signingConfig signingConfigs.release//设置签名信息
