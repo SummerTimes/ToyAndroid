@@ -12,7 +12,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath 'com.android.tools.build:gradle:4.0.1'
         classpath 'com.billy.android:cc-register:1.1.2'
         classpath 'com.meituan.android.walle:plugin:1.1.6'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -70,6 +70,13 @@ ext {
             networking         : "com.amitshekhar.android:android-networking:1.0.2"
     ]
 
+
+    propLocal = new Properties()
+    fileLocal = new File('local.properties')
+    if (fileLocal.exists()) {
+        propLocal.load(fileLocal.newDataInputStream())
+    }
+
     propModule = new Properties()
     fileModule = new File('artifactory_version.properties')
     propModule.load(fileModule.newDataInputStream())
@@ -88,9 +95,22 @@ ext {
             }
         }
     }
-//    deps.each {
-//        logger.quiet("----mavenList---" + it.key + "=" + it.value)
-//    }
+    deps.each {
+        logger.quiet("----mavenList---" + it.key + "=" + it.value)
+    }
+
+    //缓存本地module打包列表,默认只支持maven组为:cn.com.bailian.bailianmobile
+    localModule = new ArrayList<String>()
+    propModule.each {
+        projectAdd = propLocal.getProperty(it.key)
+        projectDependent = propLocal.getProperty(it.key + ".local")
+        if ("true".equalsIgnoreCase(projectAdd) && "true".equalsIgnoreCase(projectDependent)) {
+            localModule.add(it.key)
+        }
+    }
+    localModule.each {
+        logger.quiet("----localModule----"+it)
+    }
 }
 
 task clean(type: Delete) {

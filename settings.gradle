@@ -1,3 +1,18 @@
+Properties propLocal = new Properties()
+Properties propModule = new Properties()
+File localFile = new File("local.properties")
+File moduleFile = new File("artifactory_version.properties")
+if (localFile.exists() && moduleFile.exists()) {
+    propLocal.load(localFile.newDataInputStream())
+    propModule.load(moduleFile.newDataInputStream())
+
+    propModule.each {
+        if ("true".equalsIgnoreCase(propLocal.getProperty(it.key))) {
+            include new StringBuilder(":").append(it.key).toString()
+            logger.quiet("-------include-----" + it.key)
+        }
+    }
+}
 include ':app'
 
 //include ':network'

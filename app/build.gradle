@@ -36,7 +36,6 @@ walle {
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
 
-    //    implementation project(':mine')
     api rootProject.ext.deps.mine
     api rootProject.ext.deps.product
     api rootProject.ext.deps.login
