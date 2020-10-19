@@ -20,6 +20,10 @@ interface ProductConstant {
          */
         const val KRY_PRODUCT_ACTIVITY = "productActivity"
         /**
+         * ProductActivity
+         */
+        const val KRY_TEST_ACTIVITY = "pdTestAcy"
+        /**
          * ProductFragment
          */
         const val KRY_PRODUCT_FRAGMENT = "productFragment"

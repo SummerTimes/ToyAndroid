@@ -8,8 +8,6 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme"
         android:name="com.kk.app.product.ProductApplication"
         tools:ignore="GoogleAppIndexingWarning">
 
@@ -20,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.PdTestAvy"
+            android:screenOrientation="portrait" />
 
     </application>
 

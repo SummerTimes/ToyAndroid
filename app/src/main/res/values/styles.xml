@@ -18,5 +18,9 @@
         <item name="android:activityCloseExitAnimation">@anim/ap_slide_right_out</item>
     </style>
 
+    <style name="SplashTheme" parent="App_Theme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@drawable/app_splash_bg</item>
+    </style>
 
 </resources>

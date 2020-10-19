@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">MemberMobile</string>
+    <string name="app_name">Summer</string>
 
     <string name="shortcuts_publish_weibo_short_name">发微博</string>
     <string name="shortcuts_publish_weibo_long_name">发微博</string>
@@ -11,5 +11,11 @@
     <string name="shortcuts_qrcord_short_name">扫一扫</string>
     <string name="shortcuts_qrcord_long_name">扫一扫</string>
     <string name="shortcuts_qrcord_disable_msg">扫一扫不可用</string>
+
+    <string name="open_native">open native page</string>
+    <string name="open_communication">open communication</string>
+    <string name="open_flutter">open flutter page</string>
+    <string name="open_flutter_fragment">open flutter fragment page</string>
+    <string name="native_info">This is a native activity</string>
 
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mobile_navigation">
-
-</navigation>
+<network-security-config xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedNavigation">
+    <domain includeSubdomains="true">insecure.example.com</domain>
+    <domain includeSubdomains="true">insecure.cdn.example.com</domain>
+</network-security-config>

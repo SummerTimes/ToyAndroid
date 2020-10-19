@@ -1,3 +1,14 @@
 <resources>
 
+    <style name="CommonScrollStyle">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:scrollbarSize">@dimen/size_4</item>
+        <item name="android:fadeScrollbars">true</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbarThumbVertical">@drawable/common_scrollbar_thumb</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:descendantFocusability">afterDescendants</item>
+    </style>
+
+
 </resources>

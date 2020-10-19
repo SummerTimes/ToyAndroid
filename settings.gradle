@@ -5,7 +5,6 @@ File moduleFile = new File("artifactory_version.properties")
 if (localFile.exists() && moduleFile.exists()) {
     propLocal.load(localFile.newDataInputStream())
     propModule.load(moduleFile.newDataInputStream())
-
     propModule.each {
         if ("true".equalsIgnoreCase(propLocal.getProperty(it.key))) {
             include new StringBuilder(":").append(it.key).toString()
@@ -14,25 +13,11 @@ if (localFile.exists() && moduleFile.exists()) {
     }
 }
 include ':app'
-
-//include ':network'
-//include ':pre_loader'
-//include ':lib_network'
-//include ':lib_interceptor'
-
-//include ':lib_rv'
-//include ':lib_util'
-//include ':lib_image'
-//include ':lib_widget'
-//include ':lib_banner'
-//include ':lib_common'
-
-//include ':webview'
-//include ':lib_web'
-
-//include ':login'
-//include ':lore'
-//include ':mine'
-//include ':product'
-
-
+// Include the host app project.
+setBinding(new Binding([gradle: this]))                                // new
+evaluate(new File(                                                     // new
+        settingsDir.parentFile,                                              // new
+        'flutter_coupon/.android/include_flutter.groovy'                         // new
+))
+include ':flutter_coupon'
+project(':flutter_coupon').projectDir = new File('../flutter_coupon')

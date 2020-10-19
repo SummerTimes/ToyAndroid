@@ -38,10 +38,11 @@ class ProductFragment : Fragment() {
     private fun initView() {
         rootView!!.findViewById<View>(R.id.tv_info).setOnClickListener {
             CC.obtainBuilder("productComponent")
-                    .setActionName("productActivity")
-                    .addParam("param", "product/12345")
+                    .setActionName("pdTestAcy")
+                    .addParam("param", "12345")
                     .build()
                     .callAsync()
+
         }
     }
 
@@ -49,7 +50,7 @@ class ProductFragment : Fragment() {
         fun newInstance(param: String?): ProductFragment {
             val fragment = ProductFragment()
             val args = Bundle()
-            args.putString(ProductConstant.Companion.KRY_PARAM, param)
+            args.putString(ProductConstant.KRY_PARAM, param)
             fragment.arguments = args
             return fragment
         }

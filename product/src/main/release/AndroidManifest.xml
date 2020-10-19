@@ -6,6 +6,10 @@
         <activity
             android:name=".activity.ProductMainActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PdTestAvy"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

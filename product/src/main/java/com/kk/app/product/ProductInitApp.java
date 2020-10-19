@@ -3,6 +3,7 @@ package com.kk.app.product;
 import android.app.Application;
 import android.util.Log;
 import com.kk.app.lib.widget.component.IComponentInit;
+import com.kk.app.product.util.Utils;
 
 /**
  * @author kk
@@ -15,5 +16,6 @@ public class ProductInitApp implements IComponentInit {
     public void onInit(Application app) {
         Log.e("xp", "----init-----ProductInitApp--");
         Log.e("xp", "----init-----ProductInitApp--:" + app.getPackageName());
+        Utils.init(app);
     }
 }
