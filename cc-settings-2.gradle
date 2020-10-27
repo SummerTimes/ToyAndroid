@@ -3,12 +3,15 @@ project.dependencies.add('api', "com.billy.android:cc:2.1.6")
 
 repositories {
     maven { url rootProject.file("repo-local") }
-    maven { url "${artifactory_contextUrl}/${artifactory_snapshot_repoKey}" }
-    maven { url "${artifactory_contextUrl}/${artifactory_release_repoKey}" }
     maven { url 'http://localhost:8081/nexus/content/groups/android_public/' }
-    google()
-    jcenter()
+//    maven { url 'https://storage.googleapis.com/download.flutter.io'}
+    maven { url 'http://download.flutter.io'}
     mavenCentral()
+    jcenter()
+    google()
+    maven { url "https://jitpack.io" }
+    maven { url "${artifactory_contextUrl}/${artifactory_release_repoKey}" }
+    maven { url "${artifactory_contextUrl}/${artifactory_snapshot_repoKey}" }
 }
 
 android {

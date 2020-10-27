@@ -25,6 +25,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    buildTypes {
+        profile {
+            initWith debug
+        }
+    }
 }
 
 walle {
@@ -40,7 +46,8 @@ dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
 
     api rootProject.ext.deps.mine
-    api rootProject.ext.deps.product
+//    api rootProject.ext.deps.product
+    implementation project(':product')
     api rootProject.ext.deps.login
     api rootProject.ext.deps.lore
 
@@ -59,8 +66,8 @@ dependencies {
     api 'androidx.appcompat:appcompat:1.1.0'
     api 'androidx.navigation:navigation-ui-ktx:2.1.0'
     api 'androidx.navigation:navigation-fragment-ktx:2.1.0'
-    implementation project(':flutter')
-    implementation project(path: ':flutter_boost')
+
+    releaseImplementation 'com.kk.flutter.flutter_module:flutter_release:1.0'
 }
 
 

@@ -39,7 +39,7 @@ public class BlankFragment extends Fragment {
     }
 
     private void initView() {
-        luckDrawView = mRootView.findViewById(R.id.luck_draw);
+//        luckDrawView = mRootView.findViewById(R.id.luck_draw);
         mStopBtn = mRootView.findViewById(R.id.stop);
         mStopBtn.setOnClickListener(new View.OnClickListener() {
 

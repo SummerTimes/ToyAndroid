@@ -13,11 +13,11 @@ if (localFile.exists() && moduleFile.exists()) {
     }
 }
 include ':app'
-// Include the host app project.
-setBinding(new Binding([gradle: this]))                                // new
-evaluate(new File(                                                     // new
-        settingsDir.parentFile,                                              // new
-        'flutter_coupon/.android/include_flutter.groovy'                         // new
-))
-include ':flutter_coupon'
-project(':flutter_coupon').projectDir = new File('../flutter_coupon')
+ // Include the host app project.
+// setBinding(new Binding([gradle: this]))                                // new
+//  evaluate(new File(                                                     // new
+//        settingsDir.parentFile,                                              // new
+//        'flutter_ibailian/.android/include_flutter.groovy'                         // new
+//))
+//include ':flutter_ibailian'
+//project(':flutter_ibailian').projectDir = new File('../flutter_ibailian')

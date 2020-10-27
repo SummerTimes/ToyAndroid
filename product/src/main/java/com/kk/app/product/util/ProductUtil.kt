@@ -5,9 +5,11 @@ import android.content.Intent
 import android.text.TextUtils
 import com.billy.cc.core.component.CC
 import com.kk.app.lib.widget.BLToast
-import com.kk.app.product.activity.PdTestAvy
 import com.kk.app.product.activity.ProductMainActivity
 import com.kk.app.product.constant.ProductConstant
+import com.kk.app.product.flutter.activity.FltContentActivity
+import org.json.JSONException
+import org.json.JSONObject
 
 /**
  * @author kk
@@ -46,11 +48,20 @@ object ProductUtil {
             return
         }
         val context = cc.context
-        val intent = Intent(context, PdTestAvy::class.java)
+        val intent = Intent(context, FltContentActivity::class.java)
         if (context !is Activity) {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
-        intent.putExtra(ProductConstant.KRY_PARAM, param)
+        val orderListRouter = JSONObject()
+        try {
+            orderListRouter.put("router", "about")
+            orderListRouter.put("data", cc.params)
+        } catch (e: JSONException) {
+            e.printStackTrace()
+        }
+        intent.putExtra("route", orderListRouter.toString())
+        intent.putExtra("background_mode", "opaque")
+        intent.putExtra("destroy_engine_with_activity", true);
         context.startActivity(intent)
     }
 }

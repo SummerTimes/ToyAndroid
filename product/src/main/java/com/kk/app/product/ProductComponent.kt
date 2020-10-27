@@ -29,8 +29,8 @@ class ProductComponent : IComponent {
             ProductUtil.openTestAvy(cc)
             CC.sendCCResult(cc.callId, CCResult.success())
         } else if (TextUtils.equals(ProductConstant.KRY_PRODUCT_FRAGMENT, actionName)) {
-//            CC.sendCCResult(cc.callId, CCResult.success("fragment", ProductFragment.Companion.newInstance("体系")))
-            CC.sendCCResult(cc.callId, CCResult.success("fragment", BlankFragment.newInstance("体系")))
+            CC.sendCCResult(cc.callId, CCResult.success("fragment", ProductFragment.Companion.newInstance("体系")))
+//            CC.sendCCResult(cc.callId, CCResult.success("fragment", BlankFragment.newInstance("体系")))
             return true
         } else {
             CC.sendCCResult(cc.callId, CCResult.error("actionName not specified"))

@@ -10,5 +10,8 @@
         <item name="android:descendantFocusability">afterDescendants</item>
     </style>
 
+    <style name="MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 
 </resources>

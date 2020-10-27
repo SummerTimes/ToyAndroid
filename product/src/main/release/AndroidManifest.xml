@@ -10,6 +10,29 @@
         <activity
             android:name=".activity.PdTestAvy"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".flutter.activity.FltContentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".flutter.activity.FltMainActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="io.flutter.embedding.android.FlutterActivity"
+            android:theme="@style/MyTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize"
+            />
+
+        <activity
+            android:name="io.flutter.embedding.android.FlutterFragmentActivity"
+            android:theme="@style/MyTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize"
+            />
     </application>
 
 </manifest>

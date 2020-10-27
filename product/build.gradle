@@ -32,15 +32,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        profile {
+            initWith debug
+        }
+    }
 }
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     api rootProject.ext.deps.lib_rv
     api rootProject.ext.deps.lib_common
-    implementation 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
-    implementation 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
+    api 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    api 'com.kk.flutter.flutter_module:flutter_release:1.0'
 }

@@ -11,15 +11,15 @@
         android:layout_marginTop="50dp"
         android:text="停止" />
 
-    <com.kk.app.product.ld.LuckyDrawView
-        android:id="@+id/luck_draw"
-        android:layout_width="350dp"
-        android:padding="8dp"
-        android:background="@mipmap/rf_bg"
-        android:layout_height="350dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        app:startBackgroud="@drawable/lucky_draw_btn_selector"
-        app:startSrc="@mipmap/ic_launcher" />
+<!--    <com.kk.app.product.ld.LuckyDrawView-->
+<!--        android:id="@+id/luck_draw"-->
+<!--        android:layout_width="350dp"-->
+<!--        android:padding="8dp"-->
+<!--        android:background="@mipmap/rf_bg"-->
+<!--        android:layout_height="350dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        app:startBackgroud="@drawable/lucky_draw_btn_selector"-->
+<!--        app:startSrc="@mipmap/ic_launcher" />-->
 
 </LinearLayout>
