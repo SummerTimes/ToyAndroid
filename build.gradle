@@ -4,7 +4,6 @@ buildscript {
     repositories {
         maven { url rootProject.file("repo-local") }
         maven { url 'http://localhost:8081/nexus/content/groups/android_public/' }
-//        maven { url 'https://storage.googleapis.com/download.flutter.io'}
         maven { url 'http://download.flutter.io'}
         mavenCentral()
         jcenter()
@@ -16,7 +15,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.0'
         classpath 'com.billy.android:cc-register:1.1.2'
-        classpath 'com.meituan.android.walle:plugin:1.1.6'
+        classpath 'com.meituan.android.walle:plugin:1.1.7'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
     }
@@ -31,7 +30,6 @@ allprojects {
     repositories {
         maven { url rootProject.file("repo-local") }
         maven { url 'http://localhost:8081/nexus/content/groups/android_public/' }
-//        maven { url 'https://storage.googleapis.com/download.flutter.io'}
         maven { url 'http://download.flutter.io'}
         mavenCentral()
         jcenter()

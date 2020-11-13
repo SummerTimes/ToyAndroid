@@ -5,7 +5,6 @@ import com.billy.cc.core.component.CC
 import com.billy.cc.core.component.CCResult
 import com.billy.cc.core.component.IComponent
 import com.kk.app.product.constant.ProductConstant
-import com.kk.app.product.fragment.BlankFragment
 import com.kk.app.product.fragment.ProductFragment
 import com.kk.app.product.util.ProductUtil
 

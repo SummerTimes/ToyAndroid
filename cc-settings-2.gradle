@@ -4,7 +4,6 @@ project.dependencies.add('api', "com.billy.android:cc:2.1.6")
 repositories {
     maven { url rootProject.file("repo-local") }
     maven { url 'http://localhost:8081/nexus/content/groups/android_public/' }
-//    maven { url 'https://storage.googleapis.com/download.flutter.io'}
     maven { url 'http://download.flutter.io'}
     mavenCentral()
     jcenter()

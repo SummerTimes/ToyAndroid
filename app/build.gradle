@@ -46,8 +46,8 @@ dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
 
     api rootProject.ext.deps.mine
-//    api rootProject.ext.deps.product
-    implementation project(':product')
+    api rootProject.ext.deps.product
+//    implementation project(':product')
     api rootProject.ext.deps.login
     api rootProject.ext.deps.lore
 
@@ -59,15 +59,14 @@ dependencies {
     api rootProject.ext.deps.lib_common
     api rootProject.ext.deps.constraintlayout
 
-    api 'com.meituan.android.walle:library:1.1.6'
+    api 'com.meituan.android.walle:library:1.1.7'
     api 'com.bytedance.boost_multidex:boost_multidex:1.0.0'
-    api 'org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.10'
 
     api 'androidx.appcompat:appcompat:1.1.0'
-    api 'androidx.navigation:navigation-ui-ktx:2.1.0'
-    api 'androidx.navigation:navigation-fragment-ktx:2.1.0'
+    api 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    api 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    api 'org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.10'
 
-    releaseImplementation 'com.kk.flutter.flutter_module:flutter_release:1.0'
 }
 
 
