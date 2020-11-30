@@ -1,13 +1,9 @@
 package com.kk.app.mine.util
 
-import android.app.Activity
-import android.content.Intent
 import android.text.TextUtils
 import com.billy.cc.core.component.CC
 import com.kk.app.lib.widget.BLToast
-import com.kk.app.mine.activity.MineActivity
 import com.kk.app.mine.constant.MineConstant
-import com.kk.app.mine.demo.example.DemoListActivity
 
 /**
  * @author kk
@@ -28,11 +24,11 @@ object MineUtils {
         }
         val context = cc.context
 //        val intent = Intent(context, MineActivity::class.java)
-        val intent = Intent(context, DemoListActivity::class.java)
-        if (context !is Activity) {
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        }
-        intent.putExtra(MineConstant.KRY_PARAM, param)
-        context.startActivity(intent)
+//        val intent = Intent(context, DemoListActivity::class.java)
+//        if (context !is Activity) {
+//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+//        }
+//        intent.putExtra(MineConstant.KRY_PARAM, param)
+//        context.startActivity(intent)
     }
 }

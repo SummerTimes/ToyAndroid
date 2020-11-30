@@ -11,6 +11,11 @@ android {
         targetSdkVersion rootProject.compileVersion
         versionCode 1
         versionName "1.0"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
     }
 
     buildTypes {
@@ -22,6 +27,9 @@ android {
 
     androidExtensions {
         experimental = true
+    }
+    lintOptions {
+        abortOnError false
     }
 }
 

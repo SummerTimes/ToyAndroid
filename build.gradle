@@ -13,7 +13,7 @@ buildscript {
         maven { url "${artifactory_contextUrl}/${artifactory_snapshot_repoKey}" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:3.6.4'
         classpath 'com.billy.android:cc-register:1.1.2'
         classpath 'com.meituan.android.walle:plugin:1.1.7'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
