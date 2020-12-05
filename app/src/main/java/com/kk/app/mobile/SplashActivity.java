@@ -30,12 +30,6 @@ public class SplashActivity extends AppCompatActivity {
 
     private void initMain() {
         mImKlcw = findViewById(R.id.im_klcw);
-        Glide.with(this)
-                .load(R.drawable.app_tide_play)
-                .placeholder(R.mipmap.app_klcw)
-                .error(R.mipmap.app_klcw)
-                .into(mImKlcw);
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
