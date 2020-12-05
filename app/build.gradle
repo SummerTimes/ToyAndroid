@@ -51,10 +51,10 @@ walle {
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
 
-    api rootProject.ext.deps.mine
-    api rootProject.ext.deps.product
-//    implementation project(':product')
+//    api rootProject.ext.deps.mine
+    implementation project(':mine')
     api rootProject.ext.deps.login
+    api rootProject.ext.deps.product
     api rootProject.ext.deps.lore
 
     api rootProject.ext.deps.webview
@@ -69,9 +69,9 @@ dependencies {
     api 'com.bytedance.boost_multidex:boost_multidex:1.0.0'
 
     api 'androidx.appcompat:appcompat:1.2.0'
-    api 'androidx.navigation:navigation-ui-ktx:2.2.2'
-    api 'androidx.navigation:navigation-fragment-ktx:2.2.2'
-    api 'org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.10'
+    api 'androidx.navigation:navigation-ui-ktx:2.3.1'
+    api 'androidx.navigation:navigation-fragment-ktx:2.3.1'
+    api 'org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.20'
 
 }
 
