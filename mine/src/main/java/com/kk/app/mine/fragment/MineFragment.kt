@@ -1,11 +1,14 @@
 package com.kk.app.mine.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.billy.cc.core.component.CC
+import com.kk.app.lib_permission.utils.PermissionConstants
+import com.kk.app.lib_permission.utils.PermissionUtils
 import com.kk.app.mine.R
 import com.kk.app.mine.constant.MineConstant
 
@@ -38,12 +41,27 @@ class MineFragment : Fragment() {
 
     private fun initView() {
         rootView!!.findViewById<View>(R.id.tv_info).setOnClickListener {
-            CC.obtainBuilder("mineComponent")
-                    .setActionName("mineActivity")
-                    .addParam("param", "我的12345")
-                    .build()
-                    .callAsync()
+//            CC.obtainBuilder("mineComponent")
+//                    .setActionName("mineActivity")
+//                    .addParam("param", "我的12345")
+//                    .build()
+//                    .callAsync()
+            showPrDlg()
         }
+    }
+
+    private fun showPrDlg() {
+        PermissionUtils.permission(PermissionConstants.STORAGE)
+                .callback(object : PermissionUtils.SimpleCallback {
+                    override fun onGranted() {
+                       Log.e("xp","-------onGranted-----");
+                    }
+
+                    override fun onDenied() {
+                        Log.e("xp","-------onDenied-----");
+                    }
+                })
+                .request()
     }
 
     companion object {

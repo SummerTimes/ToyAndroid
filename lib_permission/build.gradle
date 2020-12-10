@@ -7,7 +7,7 @@ android {
     compileSdkVersion rootProject.compileVersion
     defaultConfig {
         if (project.ext.runAsApp) {
-            applicationId "com.kk.app.mine"
+            applicationId "com.kk.app.lib_permission"
         }
         minSdkVersion rootProject.minVersion
         targetSdkVersion rootProject.compileVersion
@@ -44,8 +44,12 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api 'com.alibaba.android:tangram:3.5.9'
-    api 'com.squareup.picasso:picasso:2.5.2'
-    api rootProject.ext.deps.lib_rv
-    api rootProject.ext.deps.lib_permission
+    api rootProject.ext.deps.cc
+    api rootProject.ext.deps.supportV4
+    api rootProject.ext.deps.recyclerview
+    api rootProject.ext.deps.constraintlayout
+
+    api rootProject.ext.deps.lib_common
+    api rootProject.ext.deps.lib_widget
+
 }
