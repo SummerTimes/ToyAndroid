@@ -51,9 +51,9 @@ subprojects { p ->
 }
 
 ext {
-    compileVersion = 29
+    compileVersion = 30
     minVersion = 19
-    supportVersion = '29.0.3'
+    supportVersion = '30.0.3'
     deps = [
             cc                 : 'com.billy.android:cc:2.1.6',
             appcompat          : "androidx.appcompat:appcompat:1.2.0-alpha01",
