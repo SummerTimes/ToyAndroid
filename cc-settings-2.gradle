@@ -6,7 +6,6 @@ repositories {
     maven { url 'http://localhost:8081/nexus/content/groups/android_public/' }
     maven { url 'http://download.flutter.io'}
     mavenCentral()
-    jcenter()
     google()
     maven { url "https://jitpack.io" }
     maven { url "${artifactory_contextUrl}/${artifactory_release_repoKey}" }
@@ -47,6 +46,7 @@ android {
 
 dependencies {
     if (project.ext.has('runAsApp') && project.ext.runAsApp) {
+
     }
 }
 

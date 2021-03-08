@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.billy.android.preloader.PreLoader
+import com.billy.android.preloader.PreLoader.preLoad
 import com.kk.app.lib.rv.manager.IFloorCombine
 import com.kk.app.lib.rv.manager.IUI
 import com.kk.app.mine.R
@@ -44,7 +45,7 @@ class MineActivity : AppCompatActivity(), IUI {
      *
      * @return
      */
-    private val params: String
+    private val params: String?
         private get() {
             val mParams = intent.getStringExtra(MineConstant.KRY_PARAM)
             return if (TextUtils.isEmpty(mParams)) {
