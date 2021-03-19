@@ -12,7 +12,7 @@ buildscript {
         maven { url "${artifactory_contextUrl}/${artifactory_snapshot_repoKey}" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0-alpha08'
+        classpath 'com.android.tools.build:gradle:7.0.0-alpha10'
         classpath 'com.billy.android:cc-register:1.1.2'
         classpath 'com.meituan.android.walle:plugin:1.1.7'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -54,12 +54,12 @@ ext {
     supportVersion = '30.0.3'
     deps = [
             cc                 : 'com.billy.android:cc:2.1.6',
-            appcompat          : "androidx.appcompat:appcompat:1.2.0-alpha01",
+            appcompat          : "androidx.appcompat:appcompat:1.2.0",
             supportV4          : "androidx.legacy:legacy-support-v4:1.0.0",
-            recyclerview       : "androidx.recyclerview:recyclerview:1.2.0-alpha02",
+            recyclerview       : "androidx.recyclerview:recyclerview:1.2.0-beta02",
             cardview           : "androidx.cardview:cardview:1.0.0",
-            constraintlayout   : "androidx.constraintlayout:constraintlayout:2.0.0-beta4",
-            corektx            : "androidx.core:core-ktx:1.2.0",
+            constraintlayout   : "androidx.constraintlayout:constraintlayout:1.1.0",
+            corektx            : "androidx.core:core-ktx:1.3.2",
             percent            : "androidx.percentlayout:percentlayout:1.0.0",
             annotation         : "androidx.annotation:annotation:1.1.0",
             design             : "com.google.android.material:material-rc01:1.1.0",
@@ -98,7 +98,7 @@ ext {
         logger.quiet("----mavenList---" + it.key + "=" + it.value)
     }
 
-    //缓存本地module打包列表,默认只支持maven组为:cn.com.bailian.bailianmobile
+    //缓存本地module打包列表,默认只支持maven组为:com.kk.app
     localModule = new ArrayList<String>()
     propModule.each {
         projectAdd = propLocal.getProperty(it.key)
