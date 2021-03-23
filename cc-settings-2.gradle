@@ -4,7 +4,7 @@ project.dependencies.add('api', "com.billy.android:cc:2.1.6")
 repositories {
     maven { url rootProject.file("repo-local") }
     maven { url 'http://localhost:8081/nexus/content/groups/android_public/' }
-    maven { url 'http://download.flutter.io'}
+    maven { url 'http://download.flutter.io' }
     mavenCentral()
     google()
     maven { url "https://jitpack.io" }
@@ -41,6 +41,15 @@ android {
             buildConfigField("String", "networkEnvType", "\"" + networkEnvType + "\"")
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 

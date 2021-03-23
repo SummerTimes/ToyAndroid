@@ -16,7 +16,7 @@ import com.kk.app.mobile.utils.AppJumpUtil;
  * @datetime: 2020/9/1
  * @des #启动Splash
  */
-public class SplashActivity extends AppCompatActivity {
+public class   SplashActivity extends AppCompatActivity {
 
     private ImageView mImKlcw;
 
