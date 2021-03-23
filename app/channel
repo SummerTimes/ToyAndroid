@@ -4,11 +4,12 @@ MEIZU           # 魅族
 OPPO            # oppo
 VIVO            # vivo
 SAMSUNG         # 三星
-LENOVO          # 联想
-SMARTISAN       # 锤子
-TXYYB           # 应用宝
-m360            # 360
-BAIDU           # 百度
-ANZHI           # 安智
-ALI             # 阿里
-SOUGOU          # 搜狗
+
+#LENOVO          # 联想
+#SMARTISAN       # 锤子
+#TXYYB           # 应用宝
+#m360            # 360
+#BAIDU           # 百度
+#ANZHI           # 安智
+#ALI             # 阿里
+#SOUGOU          # 搜狗
