@@ -13,11 +13,6 @@ import com.kk.app.mobile.MainActivity;
  */
 public class AppJumpUtil {
 
-    /**
-     * 实名人证
-     *
-     * @param context
-     */
     public static void startMainAvy(Context context) {
         Intent intent = new Intent(context, MainActivity.class);
         if (context instanceof Application) {

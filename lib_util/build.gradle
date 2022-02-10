@@ -22,8 +22,6 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api rootProject.ext.deps.rxjava
-    api rootProject.ext.deps.rxandroid
     api rootProject.ext.deps.appcompat
     api rootProject.ext.deps.recyclerview
     api rootProject.ext.deps.kotlin_stdlib_jdk7

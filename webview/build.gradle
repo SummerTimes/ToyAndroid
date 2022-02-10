@@ -38,10 +38,11 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api "com.google.code.gson:gson:2.8.6"
     api rootProject.ext.deps.lib_web
     api rootProject.ext.deps.lib_image
     api rootProject.ext.deps.lib_widget
     api rootProject.ext.deps.lib_common
+
     api rootProject.ext.deps.cardview
+    api rootProject.ext.deps.gson
 }

@@ -20,6 +20,6 @@ android {
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     api rootProject.ext.deps.cc
-    api "com.google.code.gson:gson:2.8.6"
-    api "com.squareup.okhttp3:okhttp:4.9.0"
+    api rootProject.ext.deps.gson
+    api "com.squareup.okhttp3:okhttp:4.9.1"
 }
