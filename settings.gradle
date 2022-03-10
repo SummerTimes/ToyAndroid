@@ -13,4 +13,3 @@ if (localFile.exists() && moduleFile.exists()) {
     }
 }
 include ':app'
-//include ':lib_permission'
